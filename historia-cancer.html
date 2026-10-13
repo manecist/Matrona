@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<title>Cómo Ganarle Al Cáncer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700&display=swap">
+<style>/* Layout: historia vertical por capítulos; cada capítulo = texto corto + gráfico interactivo; guardianas de Luna Matrona guían con globos de diálogo */
+:root{
+  --bg:#FCF7FD; --bg2:#F3ECFF; --surface:#FFFFFF; --soft:#F6EEFD; --ink:#3A2E4A; --muted:#7D6C96; --line:#ECE0F8;
+  --rosa:#EE6FB0; --rosa2:#FBC4E2; --violeta:#6B3FD4; --lila:#B79AF2; --celeste:#7FCCE8; --azul:#2F5BB5; --oro:#E9B949;
+  --ok:#2E8B6E; --no:#D0457E; --shadow:0 16px 44px rgba(107,63,212,.12);
+  --display:"Lora",Georgia,"Times New Roman",serif; --body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1B1525; --bg2:#241B33; --surface:#2A2139; --soft:#33284A; --ink:#F4EDFC; --muted:#BCAAD8; --line:#3E3255;
+  --rosa:#F48CC2; --rosa2:#6E3C5A; --violeta:#AE92F7; --lila:#C9B4F8; --celeste:#94D8EF; --azul:#86A8F0; --oro:#F1CA62;
+  --ok:#5CCBA4; --no:#F27BAE; --shadow:0 16px 44px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1B1525; --bg2:#241B33; --surface:#2A2139; --soft:#33284A; --ink:#F4EDFC; --muted:#BCAAD8; --line:#3E3255;
+  --rosa:#F48CC2; --rosa2:#6E3C5A; --violeta:#AE92F7; --lila:#C9B4F8; --celeste:#94D8EF; --azul:#86A8F0; --oro:#F1CA62;
+  --ok:#5CCBA4; --no:#F27BAE; --shadow:0 16px 44px rgba(0,0,0,.35); color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(600px 400px at 0% 0%,color-mix(in srgb,var(--rosa2) 55%,transparent),transparent 70%),radial-gradient(700px 500px at 100% 100%,color-mix(in srgb,var(--celeste) 30%,transparent),transparent 70%)}
+.wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding-inline:20px;padding-block:24px 70px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{height:72px;max-width:100%;background:#fff;border-radius:16px;padding:5px 10px}
+.kick{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--rosa);font-weight:600}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(36px,6.4vw,68px);line-height:1.02;margin:10px 0 0;color:var(--violeta);text-wrap:balance}
+h1 em,h2 em{color:var(--rosa);font-style:italic}
+h2{font-family:var(--display);font-size:clamp(26px,4vw,40px);line-height:1.1;margin:0;color:var(--violeta);text-wrap:balance}
+.lead{font-size:19px;color:var(--muted);max-width:60ch;margin:14px 0 0}
+.chap{margin-top:70px;display:grid;gap:22px}
+.chap .num{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--rosa);font-weight:700}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:26px;align-items:center}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.panel{background:var(--surface);border-radius:26px;padding:22px;box-shadow:var(--shadow);min-width:0}
+.big{font-family:var(--display);font-weight:700;font-size:clamp(46px,8vw,88px);line-height:1;color:var(--rosa);font-variant-numeric:tabular-nums}
+.big.v{color:var(--violeta)}
+.cap{color:var(--muted);font-size:15px}
+.guide{display:flex;gap:14px;align-items:flex-end}
+.guide .who{width:124px;flex:none}
+.guide .who img{width:100%;height:auto;display:block;animation:float 4s ease-in-out infinite}
+.guide .who svg{width:100%;height:auto;display:block;animation:float 4s ease-in-out infinite}
+.bubble{position:relative;background:var(--surface);border-radius:22px 22px 22px 6px;padding:14px 18px;box-shadow:var(--shadow);font-size:16px;max-width:56ch}
+.bubble b{color:var(--violeta)}
+@keyframes float{50%{transform:translateY(-6px)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px}
+.stat{background:var(--surface);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+.stat .n{font-family:var(--display);font-weight:700;font-size:40px;line-height:1.05;color:var(--violeta);font-variant-numeric:tabular-nums}
+.stat .n.r{color:var(--rosa)}
+.stat .t{font-size:14px;color:var(--muted);margin-top:4px}
+svg text{font-family:var(--body)}
+.chart{width:100%;height:auto;display:block;overflow:visible}
+.hbar{display:grid;grid-template-columns:minmax(120px,38%) 1fr auto;gap:10px;align-items:center;margin:9px 0;font-size:14.5px}
+.hbar .tr{height:16px;background:var(--soft);border-radius:10px;overflow:hidden}
+.hbar .tr i{display:block;height:100%;border-radius:10px;transform-origin:left}
+.go .tr i{animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.hbar .v{font-weight:700;color:var(--violeta);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{font:inherit;font-size:14px;font-weight:600;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--violeta);border-color:var(--violeta);color:#fff}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--celeste);outline-offset:2px}
+.sim{display:grid;gap:16px}
+.sim label{font-weight:600;font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.sim label span{color:var(--violeta);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--rosa)}
+.out{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--soft);border-radius:20px;padding:16px}
+.dots{display:flex;flex-wrap:wrap;gap:4px;max-width:100%}
+.dots i{width:14px;height:14px;border-radius:50%;background:var(--rosa)}
+.dots i.off{background:var(--line)}
+.quiz{display:grid;gap:12px}
+.q{background:var(--surface);border-radius:20px;padding:16px 18px;box-shadow:var(--shadow)}
+.q p{margin:0 0 10px;font-weight:600}
+.q .opts{display:flex;gap:8px;flex-wrap:wrap}
+.q button.o{font:inherit;font-weight:600;padding:8px 18px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.q.done button.o{cursor:default}
+.q button.o.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--surface))}
+.q button.o.wrong{border-color:var(--no);background:color-mix(in srgb,var(--no) 14%,var(--surface))}
+.q .ans{margin-top:10px;font-size:15px;color:var(--muted)}
+.score{font-weight:700;color:var(--violeta)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:16px}
+.card{background:var(--surface);border-radius:22px;padding:18px;box-shadow:var(--shadow);border-top:6px solid var(--c,var(--lila))}
+.card h3{font-family:var(--display);font-size:20px;margin:0 0 6px;color:var(--c,var(--violeta))}
+.card p{margin:0;font-size:15px}
+details.src{margin-top:60px;background:var(--surface);border-radius:20px;padding:14px 18px;box-shadow:var(--shadow);font-size:13.5px;color:var(--muted)}
+details.src summary{cursor:pointer;font-weight:600;color:var(--violeta);font-size:15px}
+details.src ol{padding-left:20px}
+details.src a{color:var(--violeta);word-break:break-word}
+.foot{margin-top:24px;font-size:13px;color:var(--muted)}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--violeta)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.legend b{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+@media (prefers-reduced-motion:reduce){.guide .who img{width:100%;height:auto;display:block;animation:float 4s ease-in-out infinite}
+.guide .who svg{animation:none}.go .tr i{animation:none}}
+
+/* cielo nocturno con vía láctea */
+:root,:root[data-theme],:root:not([data-theme="light"]){--bg:#110B24;--bg2:#1A1236;--surface:rgba(38,27,72,.72);--soft:rgba(183,154,242,.14);--ink:#F4EDFC;--muted:#C4B5E0;--line:rgba(201,180,248,.22);
+ --rosa:#F49ACB;--rosa2:#6E3C6A;--violeta:#C7B0FF;--lila:#B79AF2;--celeste:#9ED9F0;--azul:#93B0F5;--oro:#F1CA62;--ok:#6FD3AE;--no:#F48CB8;--shadow:0 18px 50px rgba(5,2,20,.55);color-scheme:dark}
+html{background:#110B24}
+body{background:#110B24 !important;color:var(--ink)}
+body::before{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:0;
+ background:
+  radial-gradient(ellipse 18% 70% at 50% 50%,rgba(255,236,250,.20),transparent 70%),
+  radial-gradient(ellipse 30% 90% at 48% 52%,rgba(244,140,200,.30),transparent 72%),
+  radial-gradient(ellipse 46% 110% at 53% 47%,rgba(170,130,245,.30),transparent 75%),
+  radial-gradient(ellipse 14% 40% at 40% 70%,rgba(158,217,240,.12),transparent 70%),
+  radial-gradient(1200px 700px at 0% 0%,#24164A,transparent 70%),
+  radial-gradient(1000px 700px at 100% 100%,#2A1446,transparent 70%);
+ transform:rotate(-32deg);filter:blur(6px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIj48Y2lyY2xlIGN4PSI4MSIgY3k9IjUwOCIgcj0iMC41MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC40MiIvPjxjaXJjbGUgY3g9IjQ1NyIgY3k9IjI4MyIgcj0iMC44MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC40MSIvPjxjaXJjbGUgY3g9IjE3IiBjeT0iNTAxIiByPSIwLjgwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjgxIi8+PGNpcmNsZSBjeD0iMSIgY3k9IjI2NyIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43MCIvPjxjaXJjbGUgY3g9IjYxIiBjeT0iMTkwIiByPSIwLjUwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjc0Ii8+PGNpcmNsZSBjeD0iNiIgY3k9IjUyOSIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC45MyIvPjxjaXJjbGUgY3g9IjQzNiIgY3k9IjMxNyIgcj0iMC44MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjIwNyIgY3k9IjQwNiIgcj0iMC44MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC45MSIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjU1MCIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC40NiIvPjxjaXJjbGUgY3g9IjU5NiIgY3k9IjUxNiIgcj0iMC41MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC44OSIvPjxjaXJjbGUgY3g9IjU4NCIgY3k9IjMwMCIgcj0iMC44MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC44NSIvPjxjaXJjbGUgY3g9IjQwMiIgY3k9IjE4MiIgcj0iMS4wMCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC44NiIvPjxjaXJjbGUgY3g9IjMwMyIgY3k9IjM1MyIgcj0iMC41MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC41MCIvPjxjaXJjbGUgY3g9IjQ3OCIgY3k9IjI0OSIgcj0iMC42MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjQyMiIgY3k9IjQwNSIgcj0iMC43MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC42MSIvPjxjaXJjbGUgY3g9IjMwNSIgY3k9IjQ2NyIgcj0iMS4wMCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC41NyIvPjxjaXJjbGUgY3g9IjQ0MCIgY3k9IjI4MiIgcj0iMC43MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC43MSIvPjxjaXJjbGUgY3g9IjIzNiIgY3k9IjEwMiIgcj0iMS4wMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC45NCIvPjxjaXJjbGUgY3g9IjQ2MiIgY3k9IjMyNCIgcj0iMS4wMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC41OSIvPjxjaXJjbGUgY3g9IjIwNiIgY3k9IjUwOCIgcj0iMC43MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC45MCIvPjxjaXJjbGUgY3g9IjM5NiIgY3k9IjM2NSIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC41OCIvPjxjaXJjbGUgY3g9IjUxNCIgY3k9IjU3MyIgcj0iMS4yMCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC44NCIvPjxjaXJjbGUgY3g9IjMxMSIgY3k9IjMzNyIgcj0iMC44MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC42NCIvPjxjaXJjbGUgY3g9IjIxOSIgY3k9IjMzMyIgcj0iMS4wMCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC42NCIvPjxjaXJjbGUgY3g9IjIxNCIgY3k9IjIwOCIgcj0iMS4wMCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC43MiIvPjxjaXJjbGUgY3g9IjM2NyIgY3k9IjI3NSIgcj0iMC41MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43MyIvPjxjaXJjbGUgY3g9IjMzMCIgY3k9IjEwOCIgcj0iMC41MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC44MyIvPjxjaXJjbGUgY3g9IjQ5MCIgY3k9IjE1MyIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC40MCIvPjxjaXJjbGUgY3g9IjEwIiBjeT0iOSIgcj0iMC43MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC41MSIvPjxjaXJjbGUgY3g9IjQ3OCIgY3k9IjExMSIgcj0iMC43MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC40NSIvPjxjaXJjbGUgY3g9IjE1MyIgY3k9IjU3MSIgcj0iMS4yMCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC43NCIvPjxjaXJjbGUgY3g9IjE3NyIgY3k9IjQyMiIgcj0iMC44MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC40MiIvPjxjaXJjbGUgY3g9IjE4NyIgY3k9IjIwNiIgcj0iMC42MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC40MiIvPjxjaXJjbGUgY3g9IjU0MCIgY3k9IjMwNiIgcj0iMC42MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC42MSIvPjxjaXJjbGUgY3g9IjU4NSIgY3k9IjEzNSIgcj0iMC44MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC4zNyIvPjxjaXJjbGUgY3g9IjU3NiIgY3k9IjI2NyIgcj0iMS4wMCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjEzMiIgY3k9IjU4NSIgcj0iMS4yMCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC42MiIvPjxjaXJjbGUgY3g9IjMxNCIgY3k9IjE4IiByPSIxLjIwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjgzIi8+PGNpcmNsZSBjeD0iMzk2IiBjeT0iMjU2IiByPSIxLjIwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjQzIi8+PGNpcmNsZSBjeD0iMTI3IiBjeT0iMjgiIHI9IjAuNTAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNTQiLz48Y2lyY2xlIGN4PSI1NjQiIGN5PSI0NDYiIHI9IjAuODAiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuNTAiLz48Y2lyY2xlIGN4PSI1IiBjeT0iNTI3IiByPSIwLjUwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjg0Ii8+PGNpcmNsZSBjeD0iNTc3IiBjeT0iMzQyIiByPSIwLjYwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjY2Ii8+PGNpcmNsZSBjeD0iMjI3IiBjeT0iMjA4IiByPSIwLjYwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjc1Ii8+PGNpcmNsZSBjeD0iMjYwIiBjeT0iMTE2IiByPSIwLjUwIiBmaWxsPSIjRENDQkZGIiBvcGFjaXR5PSIwLjUzIi8+PGNpcmNsZSBjeD0iMzAwIiBjeT0iMTk1IiByPSIwLjgwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjM2Ii8+PGNpcmNsZSBjeD0iMTIxIiBjeT0iMTk3IiByPSIxLjAwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjU1Ii8+PGNpcmNsZSBjeD0iMTI4IiBjeT0iNDA1IiByPSIwLjgwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjU2Ii8+PGNpcmNsZSBjeD0iNTI5IiBjeT0iNDEyIiByPSIwLjgwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjQ5Ii8+PGNpcmNsZSBjeD0iNDM1IiBjeT0iNTEiIHI9IjAuNjAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOTAiLz48Y2lyY2xlIGN4PSIxMjgiIGN5PSI0NTUiIHI9IjEuMDAiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuODUiLz48Y2lyY2xlIGN4PSIyMjEiIGN5PSIyMDQiIHI9IjAuNzAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuODciLz48Y2lyY2xlIGN4PSIzNjIiIGN5PSI1NzMiIHI9IjAuODAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNzAiLz48Y2lyY2xlIGN4PSI0NjIiIGN5PSIxOTIiIHI9IjAuODAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNTgiLz48Y2lyY2xlIGN4PSI1OTUiIGN5PSI4OCIgcj0iMC42MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC40MiIvPjxjaXJjbGUgY3g9IjM1MiIgY3k9IjU1NiIgcj0iMC41MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjM0MCIgY3k9IjU3MSIgcj0iMC43MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC42OSIvPjxjaXJjbGUgY3g9IjU1NSIgY3k9IjI3NSIgcj0iMC43MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC44MiIvPjxjaXJjbGUgY3g9IjQ5NyIgY3k9IjciIHI9IjEuMjAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNDEiLz48Y2lyY2xlIGN4PSI2OSIgY3k9IjUzMSIgcj0iMC41MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC40OSIvPjxjaXJjbGUgY3g9IjU5MyIgY3k9IjI1MyIgcj0iMC41MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC40NSIvPjxjaXJjbGUgY3g9IjE0NSIgY3k9IjQ0NiIgcj0iMC41MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC45MCIvPjxjaXJjbGUgY3g9IjIyNyIgY3k9IjU4MiIgcj0iMC43MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC41MCIvPjxjaXJjbGUgY3g9IjI4NiIgY3k9IjYwIiByPSIxLjIwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjM3Ii8+PGNpcmNsZSBjeD0iNiIgY3k9IjU5MCIgcj0iMC43MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC41NCIvPjxjaXJjbGUgY3g9IjIzNSIgY3k9IjIzOSIgcj0iMC41MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC45MyIvPjxjaXJjbGUgY3g9IjU4MiIgY3k9IjY3IiByPSIwLjYwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjgyIi8+PGNpcmNsZSBjeD0iNTM1IiBjeT0iNTIxIiByPSIwLjgwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjUxIi8+PGNpcmNsZSBjeD0iMzI1IiBjeT0iMTg0IiByPSIwLjYwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjQwIi8+PGNpcmNsZSBjeD0iMTY4IiBjeT0iNTkwIiByPSIwLjgwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjc0Ii8+PGNpcmNsZSBjeD0iMzg2IiBjeT0iNTY0IiByPSIwLjgwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjM3Ii8+PGNpcmNsZSBjeD0iMTEyIiBjeT0iNDc2IiByPSIxLjAwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjUwIi8+PGNpcmNsZSBjeD0iNjEiIGN5PSIzNjciIHI9IjEuMDAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNTAiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjE0NiIgcj0iMC41MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjQzIiBjeT0iNDUiIHI9IjEuMjAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNTIiLz48Y2lyY2xlIGN4PSI0NzUiIGN5PSIyOTYiIHI9IjAuNjAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNjUiLz48Y2lyY2xlIGN4PSI0NzciIGN5PSI0NiIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC40NiIvPjxjaXJjbGUgY3g9IjkwIiBjeT0iODUiIHI9IjAuNzAiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuNDEiLz48Y2lyY2xlIGN4PSIzMDkiIGN5PSI1NTIiIHI9IjAuNzAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuODkiLz48Y2lyY2xlIGN4PSI4NSIgY3k9IjU0NiIgcj0iMC41MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC44NCIvPjxjaXJjbGUgY3g9IjM3NCIgY3k9IjQwMyIgcj0iMS4wMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC40NiIvPjxjaXJjbGUgY3g9IjI2MCIgY3k9Ijk1IiByPSIxLjIwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjUwIi8+PGNpcmNsZSBjeD0iMzkiIGN5PSI1NzgiIHI9IjAuODAiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuNTAiLz48Y2lyY2xlIGN4PSIyNjQiIGN5PSIzMjMiIHI9IjAuNTAiIGZpbGw9IiNEQ0NCRkYiIG9wYWNpdHk9IjAuODUiLz48Y2lyY2xlIGN4PSIxMDMiIGN5PSIyOTEiIHI9IjEuMjAiIGZpbGw9IiNEQ0NCRkYiIG9wYWNpdHk9IjAuOTQiLz48Y2lyY2xlIGN4PSIxMSIgY3k9IjQxNSIgcj0iMS4wMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43MSIvPjxjaXJjbGUgY3g9IjgzIiBjeT0iNTkwIiByPSIwLjcwIiBmaWxsPSIjRENDQkZGIiBvcGFjaXR5PSIwLjY5Ii8+PGNpcmNsZSBjeD0iMTAzIiBjeT0iNTQiIHI9IjAuODAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNDYiLz48Y2lyY2xlIGN4PSIxOTAiIGN5PSI1MzYiIHI9IjAuODAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNDkiLz48Y2lyY2xlIGN4PSIyOTciIGN5PSIyODciIHI9IjAuNjAiIGZpbGw9IiNEQ0NCRkYiIG9wYWNpdHk9IjAuNTUiLz48Y2lyY2xlIGN4PSIzNjciIGN5PSI0MzciIHI9IjEuMjAiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuOTMiLz48Y2lyY2xlIGN4PSIxMzIiIGN5PSI1NTMiIHI9IjEuMDAiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuNDUiLz48Y2lyY2xlIGN4PSI0NjAiIGN5PSI1MzAiIHI9IjAuNzAiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuNzciLz48Y2lyY2xlIGN4PSI1MDkiIGN5PSIyMjMiIHI9IjEuMjAiIGZpbGw9IiNEQ0NCRkYiIG9wYWNpdHk9IjAuNzEiLz48Y2lyY2xlIGN4PSI1MTQiIGN5PSI1MzgiIHI9IjEuMDAiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuNTgiLz48Y2lyY2xlIGN4PSI5MyIgY3k9IjI1NiIgcj0iMS4wMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC42NSIvPjxjaXJjbGUgY3g9IjIzNiIgY3k9IjM4MiIgcj0iMC44MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC44NiIvPjxjaXJjbGUgY3g9IjMyNyIgY3k9IjU5NyIgcj0iMS4wMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC44MyIvPjxjaXJjbGUgY3g9IjM3NyIgY3k9IjE2MSIgcj0iMC41MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC45MyIvPjxjaXJjbGUgY3g9IjM3MCIgY3k9IjU4MCIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC42MiIvPjxjaXJjbGUgY3g9IjU1NSIgY3k9IjU4MyIgcj0iMC44MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC41OSIvPjxjaXJjbGUgY3g9IjU0NiIgY3k9IjI2MyIgcj0iMS4wMCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC45MyIvPjxjaXJjbGUgY3g9IjcyIiBjeT0iMzYwIiByPSIwLjgwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjc1Ii8+PGNpcmNsZSBjeD0iMTY3IiBjeT0iMjI3IiByPSIxLjAwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjkzIi8+PGNpcmNsZSBjeD0iMzE3IiBjeT0iMzQ3IiByPSIwLjUwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjUwIi8+PGNpcmNsZSBjeD0iMTU2IiBjeT0iMTA0IiByPSIwLjYwIiBmaWxsPSIjQ0RFQkZGIiBvcGFjaXR5PSIwLjQ3Ii8+PGNpcmNsZSBjeD0iMTg3IiBjeT0iNDU0IiByPSIxLjIwIiBmaWxsPSIjRENDQkZGIiBvcGFjaXR5PSIwLjgyIi8+PGNpcmNsZSBjeD0iNDg1IiBjeT0iNTg0IiByPSIxLjAwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjY0Ii8+PGNpcmNsZSBjeD0iNTEzIiBjeT0iNDYxIiByPSIxLjAwIiBmaWxsPSIjRENDQkZGIiBvcGFjaXR5PSIwLjQ3Ii8+PGNpcmNsZSBjeD0iNDg2IiBjeT0iNTQyIiByPSIwLjUwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjY5Ii8+PGNpcmNsZSBjeD0iOCIgY3k9IjE3OCIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC40MCIvPjxjaXJjbGUgY3g9IjIyNCIgY3k9IjQ4MyIgcj0iMC44MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC43NiIvPjxjaXJjbGUgY3g9IjQ1NSIgY3k9IjE5NCIgcj0iMC41MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC43OCIvPjxjaXJjbGUgY3g9IjIxMCIgY3k9IjMyNCIgcj0iMC43MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC42NSIvPjxjaXJjbGUgY3g9IjM4OSIgY3k9IjIyNyIgcj0iMC42MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC4zNSIvPjxjaXJjbGUgY3g9IjE2NyIgY3k9IjM1OSIgcj0iMS4yMCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC40NyIvPjxjaXJjbGUgY3g9IjU1NCIgY3k9IjM2MCIgcj0iMS4wMCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC45MSIvPjxjaXJjbGUgY3g9IjQyNyIgY3k9IjU5MyIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC42MiIvPjxjaXJjbGUgY3g9IjQwMSIgY3k9IjExOCIgcj0iMS4wMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43NiIvPjxjaXJjbGUgY3g9IjM0OCIgY3k9IjU4MiIgcj0iMC43MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC43MCIvPjxjaXJjbGUgY3g9IjQ0MCIgY3k9IjUzOSIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC42NSIvPjxjaXJjbGUgY3g9IjQ0NyIgY3k9IjM4NCIgcj0iMS4yMCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC43MyIvPjxjaXJjbGUgY3g9IjI0NCIgY3k9IjM3OCIgcj0iMS4yMCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC44MiIvPjxjaXJjbGUgY3g9IjUwOCIgY3k9IjQ2MCIgcj0iMS4wMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC41NiIvPjxjaXJjbGUgY3g9IjE1OSIgY3k9IjQyNSIgcj0iMS4yMCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC41MyIvPjxjaXJjbGUgY3g9IjI3NyIgY3k9IjE1NiIgcj0iMC42MCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC42NiIvPjxjaXJjbGUgY3g9IjE2MiIgY3k9IjU5IiByPSIxLjAwIiBmaWxsPSIjRENDQkZGIiBvcGFjaXR5PSIwLjM5Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSIyNjUiIHI9IjAuNjAiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuNzgiLz48Y2lyY2xlIGN4PSI5NyIgY3k9IjU2IiByPSIxLjIwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjcxIi8+PGNpcmNsZSBjeD0iMTI1IiBjeT0iMTI1IiByPSIwLjcwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjM5Ii8+PGNpcmNsZSBjeD0iNDIwIiBjeT0iNTQ2IiByPSIxLjIwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjYzIi8+PGNpcmNsZSBjeD0iMzM1IiBjeT0iMzAiIHI9IjAuNzAiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuNTEiLz48Y2lyY2xlIGN4PSIzNjYiIGN5PSIxMzkiIHI9IjEuMDAiIGZpbGw9IiNEQ0NCRkYiIG9wYWNpdHk9IjAuNDUiLz48Y2lyY2xlIGN4PSI0NzQiIGN5PSI1MjAiIHI9IjAuNzAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNTEiLz48Y2lyY2xlIGN4PSIzNjYiIGN5PSIxNDciIHI9IjEuMjAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuODYiLz48Y2lyY2xlIGN4PSI1MjEiIGN5PSIyNDIiIHI9IjAuODAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuODIiLz48Y2lyY2xlIGN4PSIxMTQiIGN5PSIzNzYiIHI9IjAuNjAiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuNjIiLz48Y2lyY2xlIGN4PSI1NDgiIGN5PSI0MzciIHI9IjEuMDAiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuNjMiLz48Y2lyY2xlIGN4PSI5OCIgY3k9IjQ2NyIgcj0iMS4yMCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC41NyIvPjxjaXJjbGUgY3g9IjQ1MSIgY3k9IjE0NCIgcj0iMS4yMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43OCIvPjwvc3ZnPg=="),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iOTAwIj48Y2lyY2xlIGN4PSI4NjAiIGN5PSI4NTMiIHI9IjAuODAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNDAiLz48Y2lyY2xlIGN4PSI3NTIiIGN5PSI2NjIiIHI9IjEuOTIiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuNTAiLz48Y2lyY2xlIGN4PSIxOTEiIGN5PSIzMiIgcj0iMS45MiIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC45NSIvPjxjaXJjbGUgY3g9IjU3NSIgY3k9IjcyMyIgcj0iMS42MCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjQwMCIgY3k9IjI0MSIgcj0iMC44MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC41NyIvPjxjaXJjbGUgY3g9IjgzOSIgY3k9IjgxNyIgcj0iMS4yOCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC40NSIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjIwOCIgcj0iMC45NiIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC40NSIvPjxjaXJjbGUgY3g9IjQ1OSIgY3k9IjMyNCIgcj0iMS42MCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC40NiIvPjxjaXJjbGUgY3g9IjgwNCIgY3k9IjcxNyIgcj0iMS45MiIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC44OSIvPjxjaXJjbGUgY3g9IjY4NyIgY3k9IjcxMSIgcj0iMS4xMiIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC45NCIvPjxjaXJjbGUgY3g9Ijg2NiIgY3k9IjE0NSIgcj0iMS4yOCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC43NCIvPjxjaXJjbGUgY3g9IjIyNSIgY3k9IjI1MSIgcj0iMS4yOCIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC42NiIvPjxjaXJjbGUgY3g9IjcxNyIgY3k9IjU5NiIgcj0iMS4yOCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC41NiIvPjxjaXJjbGUgY3g9IjY1MyIgY3k9IjUwMiIgcj0iMS4yOCIgZmlsbD0iI0RDQ0JGRiIgb3BhY2l0eT0iMC43NSIvPjxjaXJjbGUgY3g9Ijg0NyIgY3k9IjczMyIgcj0iMC45NiIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC41MSIvPjxjaXJjbGUgY3g9IjgyMCIgY3k9IjI3OSIgcj0iMS45MiIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC42OSIvPjxjaXJjbGUgY3g9IjQ1NyIgY3k9IjU1NCIgcj0iMS4yOCIgZmlsbD0iI0Y3RDZFQyIgb3BhY2l0eT0iMC43OSIvPjxjaXJjbGUgY3g9IjQ0MCIgY3k9IjMzMCIgcj0iMS45MiIgZmlsbD0iI0NERUJGRiIgb3BhY2l0eT0iMC44OCIvPjxjaXJjbGUgY3g9IjcwNiIgY3k9IjMwNyIgcj0iMC44MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC45NSIvPjxjaXJjbGUgY3g9Ijk2IiBjeT0iNTE3IiByPSIwLjgwIiBmaWxsPSIjRjdENkVDIiBvcGFjaXR5PSIwLjcxIi8+PGNpcmNsZSBjeD0iNjE0IiBjeT0iODI0IiByPSIxLjYwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjg2Ii8+PGNpcmNsZSBjeD0iMjIwIiBjeT0iMTg5IiByPSIwLjgwIiBmaWxsPSIjRENDQkZGIiBvcGFjaXR5PSIwLjg5Ii8+PGNpcmNsZSBjeD0iNjgzIiBjeT0iNTEiIHI9IjEuMTIiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNTAiLz48Y2lyY2xlIGN4PSIyMSIgY3k9IjEwNCIgcj0iMC44MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC4zNyIvPjxjaXJjbGUgY3g9IjgyNyIgY3k9IjMzNiIgcj0iMC45NiIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43OSIvPjxjaXJjbGUgY3g9IjQ3MSIgY3k9IjIiIHI9IjEuNjAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuODMiLz48Y2lyY2xlIGN4PSIyMjMiIGN5PSI4NzQiIHI9IjAuODAiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuOTEiLz48Y2lyY2xlIGN4PSI1NjUiIGN5PSI2NzMiIHI9IjEuMTIiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuNjQiLz48Y2lyY2xlIGN4PSIyNzgiIGN5PSI0OTYiIHI9IjEuNjAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuODkiLz48Y2lyY2xlIGN4PSI2ODAiIGN5PSI3NzYiIHI9IjEuOTIiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNjMiLz48Y2lyY2xlIGN4PSIyMDMiIGN5PSI1OTUiIHI9IjEuMTIiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuMzYiLz48Y2lyY2xlIGN4PSI3MTAiIGN5PSI4NTMiIHI9IjEuNjAiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuODIiLz48Y2lyY2xlIGN4PSI0MzgiIGN5PSIyOTUiIHI9IjEuMTIiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuNTEiLz48Y2lyY2xlIGN4PSI4NzQiIGN5PSI1ODgiIHI9IjEuOTIiIGZpbGw9IiNDREVCRkYiIG9wYWNpdHk9IjAuOTMiLz48Y2lyY2xlIGN4PSI2MDQiIGN5PSIyMjgiIHI9IjAuOTYiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNDUiLz48Y2lyY2xlIGN4PSI0MDgiIGN5PSIyMDgiIHI9IjEuOTIiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOTUiLz48Y2lyY2xlIGN4PSIyMDkiIGN5PSI0MDAiIHI9IjEuMTIiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNzAiLz48Y2lyY2xlIGN4PSI1NjIiIGN5PSI3MjAiIHI9IjEuOTIiIGZpbGw9IiNGN0Q2RUMiIG9wYWNpdHk9IjAuNTAiLz48Y2lyY2xlIGN4PSIzODEiIGN5PSI0NzQiIHI9IjAuODAiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuMzciLz48Y2lyY2xlIGN4PSIzNjgiIGN5PSIxMDAiIHI9IjEuOTIiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNDkiLz48L3N2Zz4=");background-size:600px 600px,900px 900px;animation:tw 7s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.75}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){body::after{animation:none}}
+.logo{background:none !important;padding:0 !important;box-shadow:none !important;height:110px !important}
+.panel,.stat,.card,.q,.bubble,.player,.ch,.ben .b,.feat,footer,details.src,.ck label,.flow div{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line)}
+.det,.tip,.out{background:rgba(183,154,242,.12) !important}
+nav{background:rgba(17,11,36,.7) !important}
+h1,h2{color:#E9DEFF}
+.btn{background:linear-gradient(90deg,#B184F0,#EE7FC0) !important;color:#1A1033 !important}
+.btn.alt{background:var(--soft) !important;color:var(--violeta) !important}
+.tab[aria-pressed="true"],.chip[aria-pressed="true"]{background:linear-gradient(90deg,#9D74EE,#E77AB8) !important;border-color:transparent !important;color:#fff !important}
+.card .art{background:linear-gradient(135deg,color-mix(in srgb,var(--a,#F49ACB) 45%,transparent),rgba(183,154,242,.08)) !important}
+.wrap,header{position:relative;z-index:1}nav{z-index:5 !important}
+
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px;margin-top:14px}
+.ficha .card p,.ficha .card li{font-size:14.5px}.ficha .card ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:10px;margin-top:12px}
+.kpis div{background:var(--soft);border-radius:16px;padding:10px 12px}.kpis b{display:block;font-family:var(--display);font-size:26px;color:var(--rosa);line-height:1.1}.kpis span{font-size:12.5px;color:var(--muted)}
+.gb{display:grid;grid-template-columns:120px 1fr;gap:8px 12px;align-items:center;margin:10px 0;font-size:14px}.gb .bs{display:grid;gap:4px}.gb .bb{display:flex;align-items:center;gap:8px}.gb .bb i{display:block;height:13px;border-radius:8px;transform-origin:left}.go .gb .bb i{animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}.gb .bb span{font-size:12.5px;font-weight:700;color:var(--violeta);font-variant-numeric:tabular-nums}
+.who-btn{display:flex;flex-wrap:wrap;gap:8px}
+.agebox{display:grid;gap:14px}
+.agebox output{font-family:var(--display);font-size:34px;color:var(--rosa)}
+.exs{display:grid;gap:10px}
+.ex{display:flex;gap:12px;align-items:flex-start;background:var(--soft);border-radius:16px;padding:12px 14px}
+.ex .ic{font-size:22px;line-height:1;flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--surface)}
+.ex b{color:var(--violeta)}.ex p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.ex.off{opacity:.45}
+.alarm{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px}
+.alarm div{background:var(--surface);border-radius:18px;padding:14px;border-left:5px solid var(--c);box-shadow:var(--shadow)}
+.alarm b{color:var(--c)}.alarm p{margin:4px 0 0;font-size:14px}
+#c1 .hbar{cursor:pointer;border-radius:10px}#c1 .hbar:hover{background:var(--soft)}
+.ring{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.ring figure{margin:0;text-align:center;width:120px}
+.ring svg{width:110px;height:110px}
+.ring figcaption{font-size:13px;color:var(--muted)}
+</style>
+<div class="wrap">
+  <div class="top"><span class="kick">Historia de datos · Chile 2026</span><img class="logo" src="assets/paginas/cancer/803f507eb4.png" alt="María Cisterna, matrona. Registro Superintendencia de Salud N° 561993"></div>
+  <h1>Cómo ganarle al cáncer: <em>prevenir y detectarlo a tiempo</em></h1>
+  <p class="lead">Mama, cuello uterino, endometrio, ovario, testículo y próstata. Algunos se previenen con una vacuna, otros se encuentran temprano con un examen sencillo. Esta historia muestra cuántos son, cómo han cambiado, qué tienen que ver con las ITS y qué control te toca a ti.</p>
+  <style>.cintas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,128px),1fr));gap:12px;margin-top:22px}.cintas figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:8px;box-shadow:var(--shadow);text-align:center}.cintas img{width:100%;aspect-ratio:1;border-radius:14px;display:block}.cintas figcaption{font-size:13px;margin-top:6px;line-height:1.3}.cintas figcaption b{display:block;color:var(--violeta)}.cinta1{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:16px;align-items:center;margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:12px 16px;box-shadow:var(--shadow)}.cinta1 img{width:100%;border-radius:14px;display:block}.cinta1 p{margin:0;font-size:15px}@media(max-width:520px){.cinta1{grid-template-columns:1fr}.cinta1 img{max-width:160px;margin:auto}}</style><p class="cap" style="margin:22px 0 0">Cada cáncer tiene su cinta de color para recordar que se previene y se detecta a tiempo:</p><div class="cintas"><figure><img src="assets/paginas/cancer/aa35cbe263.webp" alt="Cinta rosada del cáncer de mama"><figcaption><b>Mama</b>Cinta rosada</figcaption></figure><figure><img src="assets/paginas/cancer/c6127eb23a.webp" alt="Cinta verde agua y blanca del cáncer de cuello uterino"><figcaption><b>Cuello uterino</b>Cinta verde agua y blanca</figcaption></figure><figure><img src="assets/paginas/cancer/7b1e9d5d65.webp" alt="Cinta verde azulado del cáncer de ovario"><figcaption><b>Ovario</b>Cinta verde azulado</figcaption></figure><figure><img src="assets/paginas/cancer/eb17bfe3b4.webp" alt="Cinta durazno del cáncer de endometrio"><figcaption><b>Endometrio</b>Cinta durazno</figcaption></figure><figure><img src="assets/paginas/cancer/4e606b7ed3.webp" alt="Cinta orquídea del cáncer de testículo"><figcaption><b>Testículo</b>Cinta orquídea</figcaption></figure><figure><img src="assets/paginas/cancer/eb10847401.webp" alt="Cinta celeste del cáncer de próstata"><figcaption><b>Próstata</b>Cinta celeste</figcaption></figure></div>
+  <div class="guide" style="margin-top:24px"><div class="who" id="g1"></div><div class="bubble">Soy <b>Lumen</b>. La idea más importante: <b>detectado a tiempo, la mayoría de estos cánceres se trata con éxito</b>. Por eso los controles salvan vidas.</div></div>
+
+  <section class="chap">
+    <div class="num">Explorador</div>
+    <h2>Toca un cáncer <em>y míralo todo</em></h2>
+    <div class="two" style="align-items:start">
+      <div class="panel"><div id="bub"></div><div class="cap">Cada burbuja es un cáncer: hacia la derecha, más casos; hacia arriba, más muertes por cada 10 casos; el tamaño, cuántas personas viven hoy con él (prevalencia a 5 años). GLOBOCAN 2024.</div></div>
+      <div class="panel" id="xp" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 1 · Panorama</div>
+    <h2>¿Cuántos casos hay <em>en Chile</em>?</h2>
+    <div class="two" style="align-items:start">
+      <div class="panel">
+        <div class="tabs" id="tp"><button class="tab" data-k="c" aria-pressed="true">Casos nuevos</button><button class="tab" data-k="m" aria-pressed="false">Muertes</button><button class="tab" data-k="r" aria-pressed="false">Muertes por cada 10 casos</button></div>
+        <div id="c1" style="margin-top:12px"></div><div class="cap" id="c1cap"></div>
+      </div>
+      <div>
+        <div class="stats">
+          <div class="stat"><div class="n r" data-to="5141">5.141</div><div class="t">casos nuevos de cáncer de mama al año: el más frecuente en mujeres</div></div>
+          <div class="stat"><div class="n" data-to="1905">1.905</div><div class="t">casos de cáncer de cuello uterino: el 3.º más frecuente en mujeres</div></div>
+          <div class="stat"><div class="n r" data-to="774">774</div><div class="t">casos de cáncer de testículo, el más común en hombres de 15 a 45 años</div></div>
+          <div class="stat"><div class="n" data-to="8758">8.758</div><div class="t">casos de cáncer de próstata: el cáncer más frecuente de Chile</div></div>
+        </div>
+        <div class="guide" style="margin-top:14px"><div class="who" id="g2"></div><div class="bubble">Mira la pestaña <b>“muertes por cada 10 casos”</b>: el ovario es el más letal porque <b>no tiene examen de pesquisa</b> y se descubre tarde. El testículo casi siempre se cura.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 2 · Chile en el mundo</div>
+    <h2>¿Dónde está Chile <em>frente al mundo</em>?</h2>
+    <div class="two" style="align-items:start">
+      <div class="panel">
+        <div class="tabs" id="tw"><button class="tab" data-k="i" aria-pressed="true">Casos</button><button class="tab" data-k="m" aria-pressed="false">Muertes</button><button class="tab" data-k="l" aria-pressed="false">Muertes por cada 10 casos</button></div>
+        <div id="cw" style="margin-top:10px"></div>
+        <div class="legend" id="cwl" style="margin-top:8px"></div>
+        <div class="cap" id="cwcap"></div>
+      </div>
+      <div class="cards">
+        <div class="card" style="--c:var(--celeste)"><h3>Testículo: casi 4 veces el mundo</h3><p>Chile tiene una de las tasas más altas: 6,8 por 100.000 frente a 1,8 en el mundo. Por eso el autoexamen es tan importante aquí.</p></div>
+        <div class="card" style="--c:var(--oro)"><h3>Próstata: casi el doble</h3><p>41,1 casos por 100.000 frente a 22,4 en el mundo, y una mortalidad también más alta (12,2 frente a 7,5).</p></div>
+        <div class="card" style="--c:var(--rosa)"><h3>Mama: menos casos, pero más letal</h3><p>Chile tiene menos casos que el promedio mundial, pero mueren más mujeres por cada 10 casos (3,6 frente a 2,8): se diagnostica tarde.</p></div>
+        <div class="card" style="--c:var(--violeta)"><h3>Cuello uterino: mejor que la región</h3><p>Muere menos que en Latinoamérica (4,4 frente a 5,0 por cada 10 casos), gracias al PAP y la vacuna. Aún lejos de la meta de eliminación de la OMS (menos de 4 casos por 100.000).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 3 · Detectar a tiempo</div>
+    <h2>Encontrarlo temprano <em>cambia todo</em></h2>
+    <div class="two" style="align-items:start">
+      <div class="panel"><p style="margin:0 0 6px;font-weight:600">De cada 100 personas, ¿cuántas siguen vivas 5 años después?</p><div id="sv"></div><div class="legend" style="margin-top:8px"><span><b style="background:var(--ok)"></b>Detectado localizado</span><span><b style="background:var(--no)"></b>Detectado con metástasis</span></div><div class="cap">Sobrevida relativa a 5 años según etapa al diagnóstico. Fuente: American Cancer Society / SEER (EE. UU., 2014–2020).</div></div>
+      <div class="panel sim">
+        <p style="margin:0;font-weight:600">Simulador: ¿y si más personas se controlan?</p>
+        <label for="smam">Mujeres de 50 a 69 con mamografía al día <span id="vmam">37%</span></label><input id="smam" type="range" min="37" max="100" step="1" value="70">
+        <label for="spap">Mujeres de 25 a 64 con PAP o test VPH al día <span id="vpap">43%</span></label><input id="spap" type="range" min="43" max="100" step="1" value="80">
+        <div class="out"><div><div class="big" id="rmam">0</div><div class="cap">muertes por cáncer de mama evitadas al año</div></div><div><div class="big v" id="rpap">0</div><div class="cap">casos de cáncer de cuello uterino evitados al año</div></div></div>
+        <div class="dots" id="sdots" aria-hidden="true"></div>
+        <details class="src res" style="margin-top:4px"><summary>¿Cómo lo calculo?</summary><p>Mama: la mamografía baja cerca de 40% la mortalidad en las mujeres de 50 a 69 años que se la hacen (IARC 2016). Supongo que 4 de cada 10 de las 1.829 muertes anuales ocurren en ese grupo y que hoy está cubierto el 37,4%.</p><p>Cuello uterino: el tamizaje cada 3 a 5 años previene cerca del 80% de los cánceres en las mujeres tamizadas (IARC 2005). Parto de 1.905 casos y una cobertura actual estimada de 43%.</p><p>Es una estimación educativa con supuestos visibles, no una proyección oficial.</p></details>
+      </div>
+    </div>
+    <div class="guide"><div class="who" id="g5"></div><div class="bubble">Con <b>80% de PAP o test VPH al día y la vacuna</b>, Chile podría acercarse a la meta de la OMS de <b>eliminar el cáncer de cuello uterino</b> como problema de salud pública (90% vacunadas, 70% tamizadas, 90% tratadas).</div></div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 4 · Cómo han cambiado</div>
+    <h2>Una buena noticia <em>y una alerta</em></h2>
+    <div class="two" style="align-items:start">
+      <div class="panel"><p style="margin:0 0 6px;font-weight:600">Cuello uterino · tasa de mortalidad por 100.000 mujeres</p><div id="c2a"></div><div class="cap">Bajó 56% desde 1990 gracias al PAP y la vacuna VPH. 2055 es proyección. Fuente: MINSAL 2025.</div></div>
+      <div class="panel"><p style="margin:0 0 6px;font-weight:600">Mama · muertes por año</p><div id="c2b"></div><div class="cap">2023 fue el año con más muertes registradas: unas 5 mujeres al día. Fuente: DEIS-MINSAL (vía BCN y 24horas).</div></div>
+    </div>
+    <div class="guide"><div class="who" id="g3"></div><div class="bubble">Ojo: aunque la <b>tasa</b> de cáncer de cuello uterino baja, todavía mueren <b>cerca de 790 mujeres al año</b> (791 en 2022), porque la población crece y envejece y muchas no tienen su PAP al día.</div></div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 5 · ¿Qué tienen que ver las ITS?</div>
+    <h2>El VPH <em>causa casi todos</em> los cánceres de cuello uterino</h2>
+    <div class="two">
+      <div><div class="ring" id="rings"></div><div style="display:flex;gap:12px;justify-content:center;margin-top:14px"><img src="assets/paginas/cancer/2eb0afdc0b.webp" alt="Matrona con tubo de test VPH" style="width:46%;max-width:210px;height:auto" draggable="false"><img src="assets/paginas/cancer/f0c63976fe.webp" alt="Vacuna VPH con escudo" style="width:46%;max-width:210px;height:auto" draggable="false"></div></div>
+      <div class="cards">
+        <div class="card" style="--c:var(--rosa)"><h3>VPH = ITS</h3><p>El virus papiloma humano se transmite por contacto sexual. Los tipos 16 y 18 causan cerca del 70% de los cánceres de cuello uterino; la vacuna Gardasil 9 cubre cerca del 90%.</p></div>
+        <div class="card" style="--c:var(--violeta)"><h3>No solo en mujeres</h3><p>El VPH también causa cáncer de ano, pene y garganta (orofaringe). Por eso en Chile se vacuna a niñas <b>y niños</b>.</p></div>
+        <div class="card" style="--c:var(--azul)"><h3>VIH y otras ITS</h3><p>Las mujeres con VIH tienen 6 veces más riesgo de cáncer de cuello uterino. La clamidia y el tabaco ayudan a que el VPH persista. Usar condón y tratar las ITS también previene cáncer.</p></div>
+        <div class="card" style="--c:var(--lila)"><h3>Mama, ovario, endometrio, testículo y próstata</h3><p>No son causados por ITS. Sus riesgos son la edad, la genética (BRCA), la obesidad, el alcohol, el tabaco, los antecedentes familiares y, en el testículo, el testículo no descendido.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chap" id="ch4">
+    <div class="num">Capítulo 6 · Elige un cáncer</div>
+    <h2>Prevención, pesquisa <em>y tratamiento</em></h2>
+    <div class="pick tabs" id="pk"></div>
+    <div id="fi"></div>
+    <p class="cap">Información educativa basada en guías MINSAL/GES, OMS y GLOBOCAN 2024. Los tratamientos los decide el equipo de oncología según cada caso.</p>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 7 · ¿Qué control me toca?</div>
+    <h2>Arma <em>tu calendario de salud</em></h2>
+    <div class="two" style="align-items:start">
+      <div class="panel agebox">
+        <div><p style="margin:0 0 8px;font-weight:600">Soy</p><div class="who-btn" id="sx"><button class="tab" data-s="f" aria-pressed="true">Mujer o persona con útero</button><button class="tab" data-s="m" aria-pressed="false">Hombre o persona con testículos</button></div></div>
+        <label for="age" style="font-weight:600;display:flex;justify-content:space-between;align-items:center">Mi edad <output id="ao">30</output></label>
+        <input id="age" type="range" min="12" max="80" value="30">
+        <div style="display:flex;gap:10px;justify-content:center"><img id="calimg" src="assets/paginas/cancer/6c954fcad2.webp" alt="" style="width:60%;max-width:230px;height:auto" draggable="false"></div>
+        <div class="guide"><div class="who" id="g4"></div><div class="bubble" id="calmsg">Estos exámenes son <b>gratis en tu CESFAM</b>. Pide hora con tu <b>matrona</b>: ella toma el PAP o test VPH, examina tus mamas y te deriva si hace falta.</div></div>
+      </div>
+      <div class="exs" id="exs"></div>
+    </div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 8 · Señales de alerta</div>
+    <h2>Consulta <em>si notas esto</em></h2>
+    <div style="display:flex;justify-content:center"><img src="assets/paginas/cancer/96305c1aa2.webp" alt="Autoexamen de mamas en 3 pasos: mirar al espejo, palpar en círculos y revisar la axila" style="width:min(320px,80%);height:auto" draggable="false"></div>
+    <div class="alarm">
+      <div style="--c:var(--rosa)"><b>Mama</b><p>Bulto o endurecimiento, piel de naranja, pezón hundido de nuevo, secreción con sangre, cambio de forma.</p></div>
+      <div style="--c:var(--violeta)"><b>Cuello uterino</b><p>Sangrado después de la relación sexual o entre reglas, flujo con mal olor, dolor pélvico.</p></div>
+      <div style="--c:var(--azul)"><b>Endometrio</b><p>Cualquier sangrado después de la menopausia. Reglas muy abundantes o fuera de fecha después de los 40.</p></div>
+      <div style="--c:var(--lila)"><b>Ovario</b><p>Hinchazón del abdomen, llenarse rápido, dolor pélvico o ganas de orinar seguido por más de 2 a 3 semanas.</p></div>
+      <div style="--c:var(--celeste)"><b>Testículo</b><p>Bulto duro sin dolor, aumento de tamaño, sensación de peso en el escroto, dolor sordo en la ingle.</p></div>
+      <div style="--c:var(--oro)"><b>Próstata</b><p>Orinar muy seguido o de noche, chorro débil, sangre en la orina o el semen, dolor de espalda o caderas que no se pasa.</p></div>
+    </div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 9 · Mito o verdad</div>
+    <h2>¿Cuánto <em>sabes</em>?</h2>
+    <div class="quiz" id="qz"></div>
+  </section>
+
+  <section class="chap">
+    <div class="num">Capítulo 10 · Mi propuesta</div>
+    <h2>Más controles, <em>menos cáncer tardío</em></h2>
+    <div class="cards">
+      <div class="card" style="--c:var(--rosa)"><span class="pill">37%</span><h3 style="margin-top:8px">Mamografía al día</h3><p>Solo 37,4% de las mujeres de 50 a 69 años la tiene vigente; la meta es 70%. Más horas de matrona para citar, recordar y derivar.</p></div>
+      <div class="card" style="--c:var(--violeta)"><span class="pill">2026</span><h3 style="margin-top:8px">Test VPH en GES</h3><p>El test molecular de VPH es más sensible que el PAP y entra al GES en 2026. La matrona toma la muestra en el CESFAM.</p></div>
+      <div class="card" style="--c:var(--azul)"><span class="pill">90%</span><h3 style="margin-top:8px">Vacuna VPH</h3><p>Cobertura de 86,2% en niñas; la meta es 90%. Vacunar también en el colegio a quienes se atrasaron.</p></div>
+      <div class="card" style="--c:var(--celeste)"><span class="pill">1 min</span><h3 style="margin-top:8px">Autoexamen testicular</h3><p>Enseñarlo en el colegio y en el control del adolescente: un minuto al mes, en la ducha.</p></div>
+      <div class="card" style="--c:var(--oro)"><img src="assets/paginas/cancer/0f7ecf10a3.webp" alt="" style="width:90px;float:right;margin:-6px -4px 0 6px" draggable="false"><span class="pill">50+</span><h3 style="margin-top:8px">Hombres al control</h3><p>Invitar a los hombres al Examen de Medicina Preventiva y a conversar el examen de próstata.</p></div>
+    </div>
+    <p class="cap" style="margin-top:14px"><b>Marco en Chile:</b> Ley Nacional del Cáncer (Ley 21.258, 2020), Plan Nacional de Cáncer 2022–2027 y garantías GES para cáncer de mama, cervicouterino, próstata y testículo. Las guías clínicas del MINSAL definen quién se controla y cuándo.</p>
+  </section>
+
+  <details class="src" id="src"></details>
+  <p class="foot">Historia de datos de María Cisterna Escobar, matrona · Registro Superintendencia de Salud N° 561993. Las cifras de casos son estimaciones GLOBOCAN 2024 para Chile; las muertes por año vienen del DEIS-MINSAL. Material educativo: no reemplaza la consulta.</p>
+</div>
+<script>const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=(n,d=0)=>Number(n).toLocaleString("es-CL",{minimumFractionDigits:d,maximumFractionDigits:d});
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function countUp(el){const to=parseFloat(el.dataset.to),d=+(el.dataset.d||0),pre=el.dataset.pre||"",suf=el.dataset.suf||"";
+  if(reduce){el.textContent=pre+fmt(to,d)+suf;return}
+  const t0=performance.now(),D=1300;function f(t){const p=Math.min(1,(t-t0)/D),e=1-Math.pow(1-p,3);el.textContent=pre+fmt(to*e,d)+suf;if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+const io=("IntersectionObserver" in window)?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;if(el.dataset.to)countUp(el);el.classList.add("go");io.unobserve(el)}}),{threshold:.35}):null;
+function watch(){$$("[data-to],.anim").forEach(el=>{if(el.dataset.to){const d=+(el.dataset.d||0);el.textContent=(el.dataset.pre||"")+fmt(+el.dataset.to,d)+(el.dataset.suf||"")}io&&io.observe(el)})}
+// gráfico de líneas simple: series=[{name,color,pts:[[x,y]...],dash}]
+function nice(v){const p=Math.pow(10,Math.floor(Math.log10(v)));const m=v/p;return (m<=1.5?1.5:m<=2?2:m<=3?3:m<=4?4:m<=5?5:m<=6?6:m<=8?8:10)*p}
+function lineChart(el,series,o={}){
+  const W=640,H=o.h||300,L=o.l||52,R=o.r||70,T=20,B=34;
+  const xs=series.flatMap(s=>s.pts.map(p=>p[0])),ys=series.flatMap(s=>s.pts.map(p=>p[1]));
+  const x0=o.x0??Math.min(...xs),x1=o.x1??Math.max(...xs),y0=o.y0??0,y1=o.y1??nice(Math.max(...ys)*1.1);
+  const X=x=>L+(x-x0)/(x1-x0)*(W-L-R),Y=y=>H-B-(y-y0)/(y1-y0)*(H-T-B);
+  const ticks=o.yt||[0,.25,.5,.75,1].map(f=>y0+(y1-y0)*f);
+  let g=ticks.map(t=>`<line x1="${L}" x2="${W-R}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--line)"/><text x="${L-8}" y="${Y(t)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${fmt(t,o.yd||0)}</text>`).join("");
+  const xt=o.xt||[...new Set(xs)].sort();
+  g+=xt.map(x=>`<text x="${X(x)}" y="${H-10}" text-anchor="middle" font-size="12" fill="var(--muted)">${x}</text>`).join("");
+  series.forEach(s=>{const p=s.pts.slice().sort((a,b)=>a[0]-b[0]);const d=p.map((q,i)=>(i?"L":"M")+X(q[0]).toFixed(1)+" "+Y(q[1]).toFixed(1)).join(" ");
+    const len=2000;
+    g+=`<path d="${d}" fill="none" stroke="${s.color}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" ${s.dash?'stroke-dasharray="6 7"':''} class="ln" style="--len:${len}"/>`;
+    g+=p.map(q=>`<circle cx="${X(q[0])}" cy="${Y(q[1])}" r="5" fill="var(--surface)" stroke="${s.color}" stroke-width="3"><title>${esc(s.name)} ${q[0]}: ${fmt(q[1],o.yd||0)}</title></circle>`).join("");
+    const last=p[p.length-1];g+=`<text x="${X(last[0])+10}" y="${Y(last[1])+5}" font-size="13" font-weight="700" fill="${s.color}">${esc(s.label||fmt(last[1],o.yd||0))}</text>`});
+  el.innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.aria||"")}">${g}</svg>`;
+}
+function hbars(el,rows,o={}){const max=o.max||Math.max(...rows.map(r=>r[1]));
+  el.classList.add("anim");
+  el.innerHTML=rows.map(([k,v,c,lab])=>`<div class="hbar"><span>${esc(k)}</span><div class="tr"><i style="width:${Math.max(1.5,v/max*100)}%;background:${c||"var(--rosa)"}"></i></div><span class="v">${esc(lab??fmt(v,o.d||0))}</span></div>`).join("");
+  io&&io.observe(el)}
+function quiz(el,qs){let ok=0,done=0;
+  el.innerHTML=qs.map((q,i)=>`<div class="q" data-i="${i}"><p>${esc(q[0])}</p><div class="opts"><button class="o" data-v="1">Verdad</button><button class="o" data-v="0">Mito</button></div><div class="ans" hidden></div></div>`).join("")+`<p class="score" id="${el.id}-s" aria-live="polite"></p>`;
+  el.addEventListener("click",e=>{const b=e.target.closest("button.o");if(!b)return;const box=b.closest(".q");if(box.classList.contains("done"))return;
+    const q=qs[+box.dataset.i],right=(b.dataset.v==="1")===q[1];box.classList.add("done");done++;if(right)ok++;
+    box.querySelectorAll("button.o").forEach(x=>{if((x.dataset.v==="1")===q[1])x.classList.add("right");else if(x===b)x.classList.add("wrong")});
+    const a=box.querySelector(".ans");a.hidden=false;a.innerHTML=(right?"<b style='color:var(--ok)'>¡Bien!</b> ":"<b style='color:var(--no)'>Casi.</b> ")+esc(q[2]);
+    document.getElementById(el.id+"-s").textContent=done===qs.length?`Resultado: ${ok} de ${qs.length} ${ok===qs.length?"✦ ¡experta!":""}`:`Llevas ${ok} de ${done}`})}
+function sources(el,F){el.innerHTML=`<summary>Fuentes (${F.length})</summary><ol>${F.map(([id,r,u])=>`<li><b>${id}</b> · ${esc(r)} ${u?`<a href="${esc(u)}" target="_blank" rel="noopener">enlace</a>`:""}</li>`).join("")}</ol>`}
+
+const HIS={};
+const eyes=(y=0,c='#3B2A5C')=>`<path d="M78 ${96+y} q6 6 12 0" stroke="${c}" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M110 ${96+y} q6 6 12 0" stroke="${c}" stroke-width="3.2" fill="none" stroke-linecap="round"/><ellipse cx="74" cy="${106+y}" rx="7" ry="4" fill="#F59BBF" opacity=".55"/><ellipse cx="126" cy="${106+y}" rx="7" ry="4" fill="#F59BBF" opacity=".55"/><path d="M95 ${108+y} q5 4 10 0" stroke="${c}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
+const crown=l=>l<1?'':`<g fill="#F2C36B">${l>=1?'<path d="M100 38 l4 9 10 1-8 6 3 10-9-6-9 6 3-10-8-6 10-1z"/>':''}${l>=2?'<circle cx="72" cy="52" r="3"/><circle cx="128" cy="52" r="3"/>':''}${l>=3?'<circle cx="60" cy="70" r="2.4"/><circle cx="140" cy="70" r="2.4"/><circle cx="100" cy="28" r="2"/>':''}</g>`;
+const CRE={
+ marea:(l=0)=>`<svg viewBox="0 0 200 220" role="img" aria-label="Marea, la sirena de la luna nueva"><defs><linearGradient id="gm1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7A8C8"/><stop offset="1" stop-color="#C45A8C"/></linearGradient><linearGradient id="gm2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8E5CC9"/><stop offset="1" stop-color="#E26D9C"/></linearGradient></defs>
+  <path d="M60 80 q-24 30 -6 70 q10 -30 16 -50z M140 80 q24 30 6 70 q-10 -30 -16 -50z" fill="url(#gm2)" opacity=".9"/>
+  <path d="M100 150 q-30 10 -26 36 q4 16 -18 22 q24 8 40 -14 q16 22 40 14 q-22 -6 -18 -22 q4 -26 -18 -36z" fill="url(#gm1)"/>
+  <path d="M86 170 q14 6 28 0 M84 184 q16 6 32 0" stroke="#fff" stroke-opacity=".45" stroke-width="2" fill="none"/>
+  <ellipse cx="100" cy="135" rx="30" ry="26" fill="#FBD9E7"/>
+  <circle cx="100" cy="98" r="40" fill="#FDE6EF"/>
+  <path d="M60 96 q2 -44 40 -46 q40 2 40 46 q-10 -24 -40 -26 q-30 2 -40 26z" fill="url(#gm2)"/>
+  <path d="M132 64 a14 14 0 1 1 -8 -8 a10 10 0 1 0 8 8z" fill="#FFF3C9"/>
+  ${eyes()}${crown(l)}</svg>`,
+ brote:(l=0)=>`<svg viewBox="0 0 200 220" role="img" aria-label="Brote, el hada de las flores"><defs><linearGradient id="gb1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#BDEBFA"/><stop offset="1" stop-color="#7FCCE8"/></linearGradient><linearGradient id="gb2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9F0D9"/><stop offset="1" stop-color="#7FCCE8"/></linearGradient></defs>
+  <g opacity=".8"><ellipse cx="54" cy="120" rx="34" ry="22" transform="rotate(-30 54 120)" fill="url(#gb1)"/><ellipse cx="146" cy="120" rx="34" ry="22" transform="rotate(30 146 120)" fill="url(#gb1)"/><ellipse cx="62" cy="152" rx="22" ry="14" transform="rotate(20 62 152)" fill="#D8C4F0"/><ellipse cx="138" cy="152" rx="22" ry="14" transform="rotate(-20 138 152)" fill="#D8C4F0"/></g>
+  <path d="M76 190 q24 -80 48 0z" fill="url(#gb2)"/>
+  <circle cx="100" cy="100" r="40" fill="#FFF1F6"/>
+  <path d="M62 94 q6 -40 38 -40 q32 0 38 40 q-16 -18 -38 -18 q-22 0 -38 18z" fill="#9BD8EE"/>
+  <g transform="translate(100 56)">${[0,72,144,216,288].map(a=>`<ellipse cx="0" cy="-10" rx="7" ry="11" transform="rotate(${a})" fill="#F7A8C8"/>`).join('')}<circle r="6" fill="#F2C36B"/></g>
+  <circle cx="72" cy="66" r="6" fill="#C7A8E6"/><circle cx="128" cy="66" r="6" fill="#C7A8E6"/>
+  ${eyes(2)}${crown(l)}</svg>`,
+ lumen:(l=0)=>`<svg viewBox="0 0 200 220" role="img" aria-label="Lumen, la criatura de luz de la luna llena"><defs><radialGradient id="gl1"><stop offset="0" stop-color="#FFF7D6"/><stop offset=".6" stop-color="#E9D5FF"/><stop offset="1" stop-color="#B592EA"/></radialGradient><radialGradient id="gl2"><stop offset="0" stop-color="#F2C36B" stop-opacity=".7"/><stop offset="1" stop-color="#F2C36B" stop-opacity="0"/></radialGradient></defs>
+  <circle cx="100" cy="112" r="92" fill="url(#gl2)"/>
+  <path d="M58 70 l10 -34 14 30z M142 70 l-10 -34 -14 30z" fill="#C7A8E6"/>
+  <path d="M68 42 l2 5 5 1-4 3 1 5-4-3-4 3 1-5-4-3 5-1z M132 42 l2 5 5 1-4 3 1 5-4-3-4 3 1-5-4-3 5-1z" fill="#F2C36B"/>
+  <ellipse cx="100" cy="118" rx="54" ry="60" fill="url(#gl1)"/>
+  <path d="M60 170 q-10 20 6 26 M140 170 q10 20 -6 26" stroke="#B592EA" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M100 150 l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="#F2C36B"/>
+  ${eyes(4,'#4A3380')}${crown(l)}</svg>`,
+ nido:(l=0)=>`<svg viewBox="0 0 200 220" role="img" aria-label="Nido, la guardiana del bosque"><defs><linearGradient id="gn1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C9BE0"/><stop offset="1" stop-color="#2F5BB5"/></linearGradient><linearGradient id="gn2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9FD7B4"/><stop offset="1" stop-color="#5E9C86"/></linearGradient></defs>
+  <path d="M100 60 q-70 20 -56 130 q56 20 112 0 q14 -110 -56 -130z" fill="url(#gn1)"/>
+  <g fill="url(#gn2)"><path d="M52 150 q-8 -26 20 -34 q-2 28 -20 34z"/><path d="M148 150 q8 -26 -20 -34 q2 28 20 34z"/><path d="M70 186 q-6 -22 18 -26 q0 22 -18 26z"/><path d="M130 186 q6 -22 -18 -26 q0 22 18 26z"/></g>
+  <circle cx="100" cy="104" r="38" fill="#EAF0FF"/>
+  <path d="M64 92 q-4 -40 36 -44 q40 4 36 44 q-12 -20 -36 -22 q-24 2 -36 22z" fill="#4A6FC4"/>
+  <path d="M70 60 q-18 -18 -8 -34 q10 14 22 22z M130 60 q18 -18 8 -34 q-10 14 -22 22z" fill="#4A6FC4"/>
+  <g transform="translate(150 150)"><path d="M0 -26 v8" stroke="#C7A8E6" stroke-width="2"/><rect x="-9" y="-18" width="18" height="24" rx="6" fill="#FFF3C9" stroke="#C7A8E6" stroke-width="2"/><circle cy="-6" r="4" fill="#F2C36B"/></g>
+  ${eyes(6)}${crown(l)}</svg>`
+};
+const GIMG={"marea": "assets/paginas/cancer/f176d3262c.webp", "brote": "assets/paginas/cancer/4be778aada.webp", "lumen": "assets/paginas/cancer/008a5a0695.webp", "nido": "assets/paginas/cancer/fb56ba9872.webp"};for(const k in GIMG){CRE[k]=()=>`<img src="${GIMG[k]}" alt="${k}" draggable="false">`}
+$("#g1").innerHTML=CRE.lumen(1);$("#g2").innerHTML=CRE.marea(1);$("#g3").innerHTML=CRE.nido(1);$("#g4").innerHTML=CRE.brote(1);
+const G=[["Mama",5141,1829,"var(--rosa)"],["Cuello uterino",1905,843,"var(--violeta)"],["Endometrio",1076,398,"var(--azul)"],["Ovario",838,600,"var(--lila)"],["Testículo",774,113,"var(--celeste)"],["Próstata",8758,2605,"var(--oro)"]];
+function c1(k){const rows=G.map(g=>[g[0],k==="c"?g[1]:k==="m"?g[2]:+(g[2]/g[1]*10).toFixed(1),g[3],k==="r"?fmt(g[2]/g[1]*10,1):fmt(k==="c"?g[1]:g[2])]).sort((a,b)=>b[1]-a[1]);
+ hbars($("#c1"),rows,{max:Math.max(...rows.map(r=>r[1]))*1.05});
+ $("#c1cap").textContent=k==="r"?"Muertes al año por cada 10 casos nuevos. Más alto = se detecta más tarde o es más agresivo.":k==="c"?"Casos nuevos estimados en Chile. Fuente: GLOBOCAN 2024 (IARC/OMS, septiembre de 2026).":"Muertes estimadas en Chile (GLOBOCAN 2024, IARC/OMS, publicado en septiembre de 2026). Fuente: GLOBOCAN (IARC/OMS).";
+ $$("#tp .tab").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k))}
+$("#tp").onclick=e=>{const b=e.target.closest(".tab");if(b)c1(b.dataset.k)};c1("c");
+lineChart($("#c2a"),[{name:"Tasa",color:"var(--violeta)",pts:[[1990,10.5],[2024,4.6]],label:"4,6"},{name:"Proyección",color:"var(--lila)",pts:[[2024,4.6],[2055,1.9]],dash:1,label:"1,9"}],{y0:0,y1:12,yt:[0,3,6,9,12],yd:0,xt:[1990,2024,2055],aria:"Tasa de mortalidad por cáncer cervicouterino baja de 10,5 a 4,6"});
+lineChart($("#c2b"),[{name:"Muertes",color:"var(--rosa)",pts:[[2015,1522],[2016,1499],[2017,1519],[2018,1560],[2019,1659],[2020,1657],[2022,1616],[2023,1789]],label:"1.789"}],{y0:1200,y1:1900,yt:[1200,1400,1600,1800],xt:[2015,2017,2019,2021,2023],aria:"Muertes por cáncer de mama suben"});
+function ring(p,c,t){const r=44,C=2*Math.PI*r;return `<figure><svg viewBox="0 0 110 110" role="img" aria-label="${p}% ${esc(t)}"><circle cx="55" cy="55" r="${r}" fill="none" stroke="var(--line)" stroke-width="12"/><circle cx="55" cy="55" r="${r}" fill="none" stroke="${c}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C*p/100} ${C}" transform="rotate(-90 55 55)"/><text x="55" y="62" text-anchor="middle" font-size="22" font-weight="700" fill="var(--ink)">${p}%</text></svg><figcaption>${esc(t)}</figcaption></figure>`}
+$("#rings").innerHTML=ring(99,"var(--rosa)","de los cánceres de cuello uterino tienen VPH")+ring(70,"var(--violeta)","los causan los tipos 16 y 18")+ring(90,"var(--azul)","los cubre la vacuna Gardasil 9")+ring(86,"var(--celeste)","de las niñas chilenas vacunadas");
+const CA=[
+ {n:"Mama",img:"assets/paginas/cancer/3d8ec4c35c.webp",c:"var(--rosa)",k:[["5.141","casos al año"],["1.789","muertes en 2023"],["9 de 10","se salvan si se detecta temprano"],["37,4%","con mamografía al día (50–69)"]],
+  pre:["Actividad física y peso saludable","Evitar alcohol y tabaco","Lactancia materna (protege)","Conocer tus antecedentes familiares (BRCA)"],
+  pes:["Mamografía: gratis por GES entre 50 y 59 años cada 3 años, sin orden médica (Ley 21.551). El programa apunta a 50–69.","Examen de mamas con matrona o médico en el control.","Conocer tus mamas: consulta ante cualquier cambio."],
+  tra:["Cirugía (conservadora o mastectomía), quimioterapia, radioterapia, hormonoterapia o terapia dirigida.","GES: diagnóstico en 45 días desde la sospecha, etapificación en 45 días y tratamiento en 30 días."],
+  who:"Matrona: examen de mamas, solicitud de mamografía y derivación. Cirugía y oncología: diagnóstico y tratamiento."},
+ {n:"Cuello uterino",img:"assets/paginas/cancer/9be8c4b505.webp",c:"var(--violeta)",k:[["1.905","casos al año"],["791","muertes en 2022"],["−56%","baja de la tasa desde 1990"],["99%","causados por VPH"]],
+  pre:["Vacuna VPH en 4.º y 5.º básico (niñas y niños)","Condón (reduce, no elimina, el contagio de VPH)","No fumar","Tratar las ITS y el VIH"],
+  pes:["PAP cada 3 años entre 25 y 64 años, gratis en el CESFAM.","Test VPH desde los 30 años (más sensible): entra al GES en 2026; si es negativo, se repite cada 5 años. Antes de los 30 se usa el PAP. En un estudio chileno, el test VPH detectó cerca de 9 de cada 10 lesiones y el PAP, 2 de cada 10 (Manual UC 2026).","Si sale alterado: colposcopía en la Unidad de Patología Cervical."],
+  tra:["Lesiones precancerosas: conización o tratamientos locales; se curan casi siempre.","Cáncer: cirugía, radioterapia y quimioterapia según etapa (GES)."],
+  who:"Matrona: PAP, test VPH, vacunación y seguimiento. Ginecología: colposcopía y tratamiento."},
+ {n:"Endometrio",img:"assets/paginas/cancer/4baf0843dc.webp",c:"var(--azul)",k:[["1.076","casos al año"],["398","muertes al año"],["−50%","de riesgo con anticonceptivos combinados"],["90%","debuta con sangrado"]],
+  pre:["Peso saludable (la obesidad es el mayor riesgo)","Controlar diabetes e hipertensión","Píldora combinada y DIU hormonal protegen","En terapia hormonal de la menopausia, sumar progestágeno si tienes útero"],
+  pes:["No hay examen de pesquisa: el PAP no lo detecta.","Consulta por cualquier sangrado después de la menopausia: ecografía transvaginal y biopsia."],
+  tra:["Cirugía (histerectomía) y, según etapa, radioterapia o quimioterapia. Detectado temprano se cura en la mayoría."],
+  who:"Matrona: consejería, detección del sangrado anormal y derivación. Ginecología oncológica: tratamiento."},
+ {n:"Ovario",img:"assets/paginas/cancer/36b097a10d.webp",c:"var(--lila)",k:[["838","casos al año"],["600","muertes al año"],["7 de 10","muertes por cada 10 casos"],["−30 a 50%","de riesgo con anticonceptivos"]],
+  pre:["Anticonceptivos hormonales: bajan el riesgo 30% a 50% y la protección dura años","Embarazo y lactancia protegen","Estudio genético si hay varios casos de mama u ovario en la familia (BRCA)"],
+  pes:["No hay examen de pesquisa eficaz (ni ecografía ni CA-125 en población general).","La clave es consultar por síntomas que duran más de 2 a 3 semanas."],
+  tra:["Cirugía y quimioterapia; en portadoras de BRCA, terapias dirigidas. GES cubre el cáncer de ovario epitelial."],
+  who:"Matrona: consejería y derivación por síntomas o antecedentes familiares. Ginecología oncológica: tratamiento."},
+ {n:"Testículo",img:"assets/paginas/cancer/0676783dd5.webp",c:"var(--celeste)",k:[["774","casos al año"],["113","muertes al año"],["99%","sobrevida si está localizado"],["15–45","años: la edad más frecuente"]],
+  pre:["No se puede prevenir del todo","Operar a tiempo el testículo no descendido en la infancia","Conocer tus antecedentes familiares"],
+  pes:["Autoexamen testicular una vez al mes, después de la ducha.","Consulta ante un bulto o cambio de tamaño: ecografía testicular."],
+  tra:["Cirugía (orquiectomía) y, según el tipo, quimioterapia o radioterapia. Incluido en el GES desde los 15 años. Se puede guardar semen antes del tratamiento."],
+  who:"Medicina general o el Examen de Medicina Preventiva orientan y derivan. Urología hace el diagnóstico y el tratamiento."},
+ {n:"Próstata",img:"assets/paginas/cancer/848d0f1f66.webp",c:"var(--oro)",k:[["8.758","casos al año: el más frecuente de Chile"],["2.605","muertes al año"],["99%","sobrevida a 5 años si está localizado"],["50+","edad en que sube el riesgo"]],
+  pre:["No hay una forma segura de prevenirlo","Peso saludable, actividad física y no fumar","Conocer tus antecedentes: papá o hermano con cáncer de próstata duplica el riesgo"],
+  pes:["Desde los 50 años (45 si hay antecedentes familiares) conversa con tu médico si te conviene el examen de antígeno prostático (APE).","El APE es un examen de sangre; si sale alterado se complementa con tacto rectal, resonancia o biopsia.","No es un examen de rutina para todos: se decide en conjunto, porque puede detectar tumores que nunca darían problemas."],
+  tra:["Vigilancia activa en tumores de bajo riesgo, cirugía (prostatectomía), radioterapia u hormonoterapia según el caso.","Incluido en el GES."],
+  who:"Medicina general o el Examen de Medicina Preventiva: orientación y orden del APE. Urología: diagnóstico y tratamiento."}];
+function fi(i){const r=CA[i];
+ $("#fi").innerHTML=`<div class="panel" style="margin-top:14px"><div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">${r.img?`<img src="${r.img}" alt="" draggable="false" style="width:150px;height:auto;filter:drop-shadow(0 10px 20px rgba(5,2,20,.45))">`:""}<h3 style="font-family:var(--display);font-size:26px;margin:0;color:${r.c}">Cáncer de ${esc(r.n.toLowerCase())}</h3></div>
+ <div class="kpis">${r.k.map(([a,b])=>`<div><b style="color:${r.c}">${esc(a)}</b><span>${esc(b)}</span></div>`).join("")}</div>
+ <div class="ficha"><div class="card" style="--c:var(--ok)"><h3>Prevención</h3><ul>${r.pre.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+ <div class="card" style="--c:var(--violeta)"><h3>Pesquisa</h3><ul>${r.pes.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+ <div class="card" style="--c:var(--rosa)"><h3>Tratamiento</h3><ul>${r.tra.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+ <div class="card" style="--c:var(--azul)"><h3>¿Quién atiende?</h3><p>${esc(r.who)}</p></div></div></div>`;
+ $$("#pk .tab").forEach((b,j)=>b.setAttribute("aria-pressed",j===i))}
+$("#pk").innerHTML=CA.map((r,i)=>`<button class="tab" data-i="${i}" aria-pressed="false">${esc(r.n)}</button>`).join("");
+$("#pk").onclick=e=>{const b=e.target.closest(".tab");if(b)fi(+b.dataset.i)};fi(0);
+
+const PREV={"Mama":20209,"Cuello uterino":6775,"Endometrio":4006,"Ovario":2482,"Testículo":3352,"Próstata":37600};
+let SEL=0;
+function bub(){const W=640,H=330,L=56,R=20,T=20,B=40,xm=Math.log10(10000),x0=Math.log10(500);
+ const X=v=>L+(Math.log10(v)-x0)/(xm-x0)*(W-L-R),Y=v=>H-B-v/8*(H-T-B);
+ let g=[0,2,4,6,8].map(t=>`<line x1="${L}" x2="${W-R}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--line)"/><text x="${L-8}" y="${Y(t)+4}" text-anchor="end" font-size="12" fill="var(--muted)">${t}</text>`).join("");
+ g+=[500,1000,2000,5000,10000].map(v=>`<text x="${X(v)}" y="${H-14}" text-anchor="middle" font-size="12" fill="var(--muted)">${fmt(v)}</text>`).join("");
+ g+=`<text x="${W/2}" y="${H}" text-anchor="middle" font-size="12" fill="var(--muted)">casos nuevos al año (escala logarítmica)</text><text x="14" y="${H/2}" transform="rotate(-90 14 ${H/2})" text-anchor="middle" font-size="12" fill="var(--muted)">muertes por cada 10 casos</text>`;
+ g+=G.map((r,i)=>{const le=r[2]/r[1]*10,rad=8+Math.sqrt(PREV[r[0]])/7;return `<g class="bb" data-i="${i}" style="cursor:pointer" tabindex="0" role="button" aria-label="${esc(r[0])}"><circle cx="${X(r[1])}" cy="${Y(le)}" r="${rad}" fill="${r[3]}" fill-opacity="${i===SEL?.85:.45}" stroke="${i===SEL?"#fff":r[3]}" stroke-width="${i===SEL?3:1.5}"/><text x="${X(r[1])}" y="${Y(le)-rad-6}" text-anchor="middle" font-size="13" font-weight="700" fill="${r[3]}">${esc(r[0])}</text></g>`}).join("");
+ $("#bub").innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Casos y letalidad por tipo de cáncer">${g}</svg>`}
+function xp(i){SEL=i;bub();const r=G[i],c=CA.find(x=>x.n===r[0]);
+ $("#xp").innerHTML=`<div style="display:flex;gap:14px;align-items:center">${c.img?`<img src="${c.img}" alt="" style="width:120px;height:auto" draggable="false">`:""}<div><div class="kick" style="color:${r[3]}">Explorador</div><h3 style="font-family:var(--display);font-size:28px;margin:4px 0 0;color:${r[3]}">${esc(r[0])}</h3></div></div>
+ <div class="kpis">${c.k.map(([a,b])=>`<div><b style="color:${r[3]}">${esc(a)}</b><span>${esc(b)}</span></div>`).join("")}</div>
+ <div class="hbar" style="margin-top:14px"><span>Muertes por cada 10 casos</span><div class="tr"><i style="width:${r[2]/r[1]*10/8*100}%;background:${r[3]}"></i></div><span class="v">${fmt(r[2]/r[1]*10,1)}</span></div>
+ <p style="margin:12px 0 0"><b>Pesquisa:</b> ${esc(c.pes[0])}</p>
+ <button class="tab" id="xgo" style="margin-top:12px">Ver prevención, pesquisa y tratamiento ↓</button>`;
+ $("#xgo").onclick=()=>{fi(CA.indexOf(c));$("#ch4").scrollIntoView({behavior:reduce?"auto":"smooth"})};
+ fi(CA.indexOf(c))}
+$("#bub").addEventListener("click",e=>{const g=e.target.closest(".bb");if(g)xp(+g.dataset.i)});
+$("#bub").addEventListener("keydown",e=>{const g=e.target.closest(".bb");if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();xp(+g.dataset.i)}});
+$("#c1").addEventListener("click",e=>{const h=e.target.closest(".hbar");if(!h)return;const n=h.querySelector("span").textContent;const i=G.findIndex(g=>g[0]===n);if(i>=0){xp(i);$("#bub").scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"})}});
+xp(0);
+
+$("#g5").innerHTML=CRE.marea(1);
+const WD={"Mama":{ch:[29.4,10.1],w:[47.8,12.9],cl:[5141,1829],wl:[2434087,693660],la:[218121,61565]},"Cuello uterino":{ch:[11.5,4.4],w:[11.8,5.5],cl:[1905,843],wl:[604196,279583],la:[66200,33068]},"Endometrio":{ch:[5.7,2.0],w:[7.1,1.7],cl:[1076,398],wl:[434620,100680],la:[38342,9252]},"Ovario":{ch:[5.2,3.5],w:[6.5,3.8],cl:[838,600],wl:[330731,203850],la:[26914,15684]},"Testículo":{ch:[6.8,0.9],w:[1.8,0.4],cl:[774,113],wl:[70714,9240],la:[11822,2181]},"Próstata":{ch:[41.1,12.2],w:[22.4,7.5],cl:[8758,2605],wl:[1546112,419849],la:[215448,63058]}};
+function gb2(el,groups,series,max,d){el.classList.remove("go");el.classList.add("anim");el.innerHTML=groups.map(([lab,vals])=>`<div class="gb"><span>${esc(lab)}</span><div class="bs">${vals.map((v,i)=>`<div class="bb"><i style="width:${v/max*100}%;background:${series[i]}"></i><span>${fmt(v,d)}</span></div>`).join("")}</div></div>`).join("");void el.offsetWidth;el.classList.add("go")}
+function cw(k){const N=Object.keys(WD);
+ if(k==="l"){gb2($("#cw"),N.map(n=>{const x=WD[n];return [n,[x.cl[1]/x.cl[0]*10,x.la[1]/x.la[0]*10,x.wl[1]/x.wl[0]*10]]}),["var(--rosa)","var(--lila)","var(--celeste)"],8,1);
+  $("#cwl").innerHTML='<span><b style="background:var(--rosa)"></b>Chile</span><span><b style="background:var(--lila)"></b>Latinoamérica</span><span><b style="background:var(--celeste)"></b>Mundo</span>';
+  $("#cwcap").textContent="Muertes al año por cada 10 casos nuevos (cálculo propio con las cifras de GLOBOCAN 2024). Es un indicador simple: más alto suele significar diagnóstico más tardío."}
+ else{const j=k==="i"?0:1;gb2($("#cw"),N.map(n=>[n,[WD[n].ch[j],WD[n].w[j]]]),["var(--rosa)","var(--celeste)"],k==="i"?50:14,1);
+  $("#cwl").innerHTML='<span><b style="background:var(--rosa)"></b>Chile</span><span><b style="background:var(--celeste)"></b>Mundo</span>';
+  $("#cwcap").textContent=(k==="i"?"Casos nuevos":"Muertes")+" por 100.000 habitantes, tasa ajustada por edad (estándar mundial) para poder comparar países con poblaciones de distinta edad. Fuente: GLOBOCAN 2024 (IARC/OMS)."}
+ $$("#tw .tab").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k))}
+$("#tw").onclick=e=>{const b=e.target.closest(".tab");if(b)cw(b.dataset.k)};cw("i");
+const SV=[["Mama",99,32],["Cuello uterino",91,19],["Endometrio",95,18],["Ovario",93,31],["Testículo",99,73],["Próstata",99,37]];
+gb2($("#sv"),SV.map(([n,a,b])=>[n,[a,b]]),["var(--ok)","var(--no)"],100,0);
+function sim2(){const m=+$("#smam").value/100,p=+$("#spap").value/100;$("#vmam").textContent=Math.round(m*100)+"%";$("#vpap").textContent=Math.round(p*100)+"%";
+ const dm=Math.max(0,Math.round(1829*0.4*0.4*(m-0.374)/(1-0.4*0.374)*1)),dp=Math.max(0,Math.round(1905*(1-(1-0.8*p)/(1-0.8*0.43))));
+ $("#rmam").textContent=fmt(dm);$("#rpap").textContent=fmt(dp);
+ $("#sdots").innerHTML=Array.from({length:Math.min(200,Math.round(dm/5))},()=>'<i style="background:var(--rosa)"></i>').join("")+Array.from({length:Math.min(200,Math.round(dp/5))},()=>'<i style="background:var(--violeta)"></i>').join("")+'<span class="cap" style="width:100%">Cada punto = 5 personas</span>'}
+$("#smam").oninput=sim2;$("#spap").oninput=sim2;sim2();
+let SX="f";
+const EX=[
+ {s:"fm",ic:"💉",t:"Vacuna VPH",d:"Gratis en 4.º y 5.º básico. Si te la saltaste, pregunta en tu vacunatorio.",a:[9,26]},
+ {s:"f",ic:"🌸",t:"PAP cada 3 años",d:"Entre 25 y 64 años. Si tu test VPH es negativo, el control se espacia a 5 años.",a:[25,64]},
+ {s:"f",ic:"🧪",t:"Test VPH",d:"Más sensible que el PAP. Se incorpora al GES en 2026 (según disponibilidad en tu CESFAM).",a:[30,64]},
+ {s:"f",ic:"🩷",t:"Examen de mamas",d:"En tu control con la matrona. Y consulta ante cualquier cambio que notes.",a:[20,120]},
+ {s:"f",ic:"📸",t:"Mamografía",d:"Gratis por GES de 50 a 59 años cada 3 años, sin orden médica. El tamizaje apunta a 50–69.",a:[50,69]},
+ {s:"f",ic:"🩸",t:"Ojo con el sangrado",d:"Después de la menopausia, cualquier sangrado se consulta (endometrio).",a:[45,120]},
+ {s:"m",ic:"✋",t:"Autoexamen testicular",d:"Una vez al mes, en la ducha. Busca bultos duros o cambios de tamaño.",a:[15,50]},
+ {s:"m",ic:"🩺",t:"Conversar el examen de próstata (APE)",d:"Desde los 50 años (45 si tu papá o hermano tuvo cáncer de próstata), decide con tu médico si te conviene.",a:[50,75]},
+ {s:"fm",ic:"🫶",t:"Examen de ITS y VIH",d:"Si tienes vida sexual: test rápido de VIH y sífilis gratis con tu matrona.",a:[14,120]},
+ {s:"fm",ic:"📋",t:"Examen de Medicina Preventiva (EMP)",d:"Una vez al año en el CESFAM: presión, peso, glicemia y orientación.",a:[15,120]}];
+function ex(){const a=+$("#age").value;$("#ao").textContent=a;
+ $("#exs").innerHTML=EX.filter(e=>e.s.includes(SX)).map(e=>{const on=a>=e.a[0]&&a<=e.a[1];return `<div class="ex${on?"":" off"}"><span class="ic" aria-hidden="true">${e.ic}</span><div><b>${esc(e.t)}</b>${on?"":` <span class="pill">desde los ${e.a[0]}${e.a[1]<100?" hasta los "+e.a[1]:""}</span>`}<p>${esc(e.d)}</p></div></div>`}).join("")}
+$("#age").oninput=ex;$("#sx").onclick=e=>{const b=e.target.closest(".tab");if(!b)return;SX=b.dataset.s;$("#calmsg").innerHTML=SX==="m"?"Pide tu <b>Examen de Medicina Preventiva</b> en el CESFAM. Si notas un bulto o tienes dudas de próstata, el médico te deriva a <b>urología</b>.":"Estos exámenes son <b>gratis en tu CESFAM</b>. Pide hora con tu <b>matrona</b>: ella toma el PAP o test VPH, examina tus mamas y te deriva si hace falta.";$("#calimg").src=SX==="m"?"assets/paginas/cancer/0f7ecf10a3.webp":"assets/paginas/cancer/6c954fcad2.webp";$$("#sx .tab").forEach(t=>t.setAttribute("aria-pressed",t===b));ex()};ex();
+quiz($("#qz"),[
+ ["El cáncer de cuello uterino se puede prevenir.",true,"Sí: con la vacuna VPH, el PAP o test VPH, y tratando a tiempo las lesiones precancerosas."],
+ ["Si me vacuné contra el VPH, ya no necesito el PAP.",false,"La vacuna no cubre todos los tipos de VPH. El PAP o test VPH sigue siendo necesario."],
+ ["El PAP también detecta el cáncer de ovario y de endometrio.",false,"No. El PAP mira el cuello del útero. El ovario y el endometrio se sospechan por síntomas."],
+ ["Los anticonceptivos hormonales bajan el riesgo de cáncer de ovario y endometrio.",true,"Sí: entre 30% y 50%, y la protección dura años después de dejarlos."],
+ ["El cáncer de testículo es de hombres mayores.",false,"Es el cáncer más común entre los 15 y los 45 años. El autoexamen mensual ayuda a detectarlo."],
+ ["El cáncer de próstata es el más frecuente en Chile.",true,"Con cerca de 8.800 casos al año es el cáncer más diagnosticado del país. Desde los 50 años conviene conversar el examen con tu médico."],
+ ["Si no tengo familiares con cáncer de mama, no me puede dar.",false,"La mayoría de las mujeres con cáncer de mama no tiene antecedentes familiares. Por eso la mamografía es para todas."]]);
+sources($("#src"),[
+ ["C1","GLOBOCAN 2024 (IARC/OMS, sept. 2026): fichas de Chile, Latinoamérica y el Caribe, y el mundo.","https://gco.iarc.who.int/media/globocan/factsheets/populations/152-chile-fact-sheet.pdf"],
+ ["C2","MINSAL: reducción de 56% de la mortalidad por cáncer cervicouterino; test VPH al GES 2026; cobertura vacuna 86,2%.","https://www.minsal.cl/ministra-aguilera-destaca-reduccion-del-56-en-mortalidad-por-cancer-cervicouterino-gracias-a-politicas-de-estado/"],
+ ["C3","BCN 2023: Cáncer de mama y mamografías en Chile (muertes 2015–2020, GES).","https://obtienearchivo.bcn.cl/obtienearchivo?id=repositorio/10221/34431/1/202307_BCN_Cancer_de_mama_y_mamografias.pdf"],
+ ["C4","DEIS: muertes por cáncer de mama 2022–2023 (vía 24horas, 16-10-2024).","https://www.24horas.cl/tendencias/tecnologia-y-ciencias/muertes-por-cancer-de-mama-aumentan-un-12-87-en-chile"],
+ ["C5","Observatorio del Cáncer: 37,4% de mujeres de 50 a 69 años con mamografía al día (vía La Tercera, 21-10-2025).","https://www.latercera.com/nacional/noticia/observatorio-del-cancer-revela-cifras-decidoras-solo-4-de-cada-10-mujeres-de-50-a-69-anos-tienen-su-mamografia-al-dia/"],
+ ["C6","DEIS: muertes por cáncer cervicouterino 2021–2022 (vía Vergara 240, UDP).","https://vergara240.udp.cl/chile-790-muertes-anuales-cancer-cervicouterino/"],
+ ["C7","MINSAL, Guía GES Cáncer de testículo en personas de 15 años y más: epidemiología y sobrevida.","https://diprece.minsal.cl/le-informamos/auge/acceso-guias-clinicas/guias-clinicas-desarrolladas-utilizando-manual-metodologico/cancer-de-testiculos-en-personas-de-15-anos-y-mas/descripcion-y-epidemiologia/"],
+ ["C8","OMS: cáncer cervicouterino (VPH, riesgo 6 veces mayor en mujeres con VIH).","https://www.who.int/es/news-room/fact-sheets/detail/cervical-cancer"],
+ ["C10","American Cancer Society: sobrevida del cáncer de próstata y tamizaje con APE (decisión compartida).","https://www.cancer.org/es/cancer/tipos/cancer-de-prostata.html"],
+ ["C11","IARC Handbooks of Cancer Prevention vol. 15 (2016): tamizaje de cáncer de mama; vol. 10 (2005): tamizaje cervicouterino.","https://publications.iarc.who.int/"],
+ ["C12","American Cancer Society: sobrevida a 5 años por etapa (SEER).","https://www.cancer.org/research/cancer-facts-statistics.html"],
+ ["C13","OMS: estrategia mundial para eliminar el cáncer cervicouterino (90-70-90).","https://www.who.int/es/initiatives/cervical-cancer-elimination-initiative"],
+ ["C9","Collaborative Group on Epidemiological Studies of Ovarian Cancer, Lancet 2008: anticonceptivos orales y cáncer de ovario.",""],
+ ["C14","MINSAL: Actualización del Plan Nacional de Cáncer 2022–2027.","https://www.minsal.cl/?p=93041"],
+ ["C15","Ley 21.258, Ley Nacional del Cáncer (Diario Oficial, 02-09-2020).","https://www.diariooficial.interior.gob.cl/publicaciones/2020/09/02/42746/01/1810229.pdf"],
+ ["C16","MINSAL: Guía Clínica GES Cáncer de próstata en personas de 15 años y más (2015).","https://www.minsal.cl/wp-content/uploads/2015/09/C%C3%A1ncer-de-pr%C3%B3stata-en-personas-de-15-a%C3%B1os-y-m%C3%A1s-Documento-Actualizado-2015.pdf"],
+ ["C17","Superintendencia de Salud: GES 28, cáncer de próstata.","https://www.superdesalud.gob.cl/orientacion-en-salud/cancer-de-prostata-en-personas-de-15-anos-y-mas/"]]);
+watch();
+</script>
+
+
+</html>
