@@ -145,9 +145,11 @@ h1,h2{color:#E9DEFF}
   <div class="stats">
     <div class="stat"><div class="n">561993</div><div class="t">Registro Superintendencia de Salud</div></div>
     <div class="stat"><div class="n">130</div><div class="t">marcas de anticonceptivos de Chile ordenadas por eficacia</div></div>
-    <div class="stat"><div class="n">4</div><div class="t">tableros en Power BI y Tableau con fuentes públicas</div></div>
+    <div class="stat"><div class="n">5</div><div class="t">tableros en Power BI y Tableau con fuentes públicas</div></div>
     <div class="stat"><div class="n">12</div><div class="t">métodos ilustrados con riesgos y beneficios</div></div>
   </div>
+
+  <div id="ochopag"></div>
 
   <section id="recorrido" style="margin-top:44px">
     <div class="sh"><div><p class="kick">Mi recorrido</p><h2>Lo que he hecho <em>como matrona</em></h2><p>Cada pieza de este portafolio sale de algo que hice en la consulta, en el CESFAM o en la comunidad.</p></div></div>
@@ -229,6 +231,66 @@ document.getElementById("chips").addEventListener("click",e=>{const b=e.target.c
  if(t!=="todo")document.getElementById(t==="datos"||t==="its"?"datos":"educa").scrollIntoView()});
 $$(".b").forEach(b=>{const f=()=>b.classList.toggle("open");b.addEventListener("click",f);b.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}})});
 document.addEventListener("contextmenu",e=>{if(e.target.closest("img,video"))e.preventDefault()});
+</script>
+<!-- navegación entre las 8 páginas -->
+<style>
+.mx-fab{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:8px}
+.mx-fab a,.mx-fab button{font:600 14px/1 "Poppins",system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;border:1px solid rgba(150,115,220,.35);background:rgba(255,255,255,.88);color:#4B2E9A;box-shadow:0 10px 30px rgba(60,30,120,.25);cursor:pointer;text-decoration:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.mx-fab button.mx-main{background:linear-gradient(90deg,#9D74EE,#E77AB8);color:#fff;border-color:transparent}
+.mx-ov{position:fixed;inset:0;z-index:70;background:rgba(30,18,60,.45);display:none;align-items:flex-end;justify-content:center;padding:16px}
+.mx-ov.on{display:flex}
+.mx-sh{width:min(980px,100%);max-height:88vh;overflow:auto;background:#FBF7FF;color:#3A2E4A;border-radius:26px;padding:22px;box-shadow:0 30px 80px rgba(20,10,50,.45)}
+.mx-sh h2{font-family:"Lora",Georgia,serif;margin:0;color:#5B3CB8!important;font-size:26px}
+.mx-sh p.mx-s{margin:4px 0 14px;color:#6F5E8C;font-size:14px}
+.mx-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.mx-x{font:inherit;font-size:22px;border:0;background:none;color:#6F5E8C;cursor:pointer}
+.mx-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:12px}
+.mx-c{display:grid;gap:4px;padding:14px;border-radius:18px;text-decoration:none;color:#3A2E4A;background:var(--mxc);border:2px solid transparent;transition:transform .15s}
+.mx-c:hover,.mx-c:focus-visible{transform:translateY(-3px);border-color:#B79AF2}
+.mx-c .i{font-size:26px;line-height:1}.mx-c b{font-family:"Lora",Georgia,serif;font-size:17px;color:#3A2E4A}.mx-c span{font-size:13px;color:#5F5079;line-height:1.35}
+.mx-c em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A52D9}
+.mx-c.here{border-color:#E77AB8;cursor:default}
+.mx-end{position:relative;z-index:1;max-width:1120px;margin:40px auto 90px;padding:0 20px}
+.mx-end .mx-box{background:rgba(255,255,255,.78);border:1px solid rgba(150,115,220,.25);border-radius:26px;padding:22px;box-shadow:0 14px 40px rgba(60,30,120,.15);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.mx-end h2{font-family:"Lora",Georgia,serif;margin:0;color:#5B3CB8!important;font-size:24px}
+.mx-end p{margin:4px 0 14px;color:#6F5E8C;font-size:14px}
+@media (max-width:560px){.mx-fab a span,.mx-fab button span{display:none}.mx-fab a,.mx-fab button{padding:12px 14px}}
+@media print{.mx-fab,.mx-ov,.mx-end{display:none}}
+</style>
+<script>
+(function(){
+const P=[
+ ["index.html","🏠","Portada","Quién soy, mi recorrido y acceso a todo.","#EFE6FF"],
+ ["capsula.html","🤰","Cápsula Chile Crece Contigo","Embarazo, parto, recién nacido, lactancia y posparto, con 8 videos.","#FFE9E0"],
+ ["guia-anticonceptivos.html","💊","Anticonceptivos al toque","Busca tu marca y compara métodos.","#EDE4FF"],
+ ["torpedo.html","📋","Torpedo profesional","Ficha por marca, ¿puedo usarlo? y cáncer por método.","#F3E8FF"],
+ ["historia-cancer.html","🎗️","Cáncer","Prevenir y detectar a tiempo.","#FFE6EE"],
+ ["historia-its.html","🔴","ITS","Lo que no se ve: sífilis, VIH, VPH.","#E3EDFF"],
+ ["historia-matronas.html","👩‍⚕️","Matronas","Hay matronas de sobra: ¿por qué no las contratan?","#DDF5EC"],
+ ["tesis.html","🎓","Mi tesis","«La sexualidad no se jubila».","#FFF0D9"]];
+const f=(location.pathname.split("/").pop()||"index.html").toLowerCase();
+const cur=P.findIndex(p=>p[0]===f);
+const card=(p,i,here)=>`<a class="mx-c${here?" here":""}" href="${p[0]}" style="--mxc:${p[4]}"${here?' aria-current="page"':''}><em>${here?"Estás aquí":"Página "+(i+1)+" de 8"}</em><span class="i">${p[1]}</span><b>${p[2]}</b><span>${p[3]}</span></a>`;
+const all=()=>P.map((p,i)=>card(p,i,i===cur)).join("");
+// botón flotante
+const fab=document.createElement("div");fab.className="mx-fab";
+fab.innerHTML=(cur>0?`<a href="index.html" aria-label="Ir a la portada">🏠<span>Inicio</span></a>`:"")+`<button class="mx-main" type="button" aria-haspopup="dialog">☰<span>Las 8 páginas</span></button>`;
+document.body.appendChild(fab);
+const ov=document.createElement("div");ov.className="mx-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-label","Las 8 páginas del portafolio");
+ov.innerHTML=`<div class="mx-sh"><div class="mx-top"><div><h2>Las 8 páginas del portafolio</h2><p class="mx-s">Toca una para ir. Desde cualquier página vuelves aquí con el botón «Las 8 páginas».</p></div><button class="mx-x" type="button" aria-label="Cerrar">✕</button></div><div class="mx-g">${all()}</div></div>`;
+document.body.appendChild(ov);
+const open=()=>ov.classList.add("on"),close=()=>ov.classList.remove("on");
+fab.querySelector(".mx-main").addEventListener("click",open);
+ov.addEventListener("click",e=>{if(e.target===ov||e.target.closest(".mx-x")||e.target.closest(".here"))close()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+// sección al final
+const end=document.createElement("section");end.className="mx-end";
+const others=P.map((p,i)=>i===cur?"":card(p,i,false)).join("");
+end.innerHTML=`<div class="mx-box"><h2>${cur===0?"Las 8 páginas del portafolio":"Sigue explorando"}</h2><p>${cur===0?"Cada una es interactiva: toca, mueve y elige opciones.":"Las otras páginas del portafolio:"}</p><div class="mx-g">${cur===0?all():others}</div></div>`;
+const slot=document.getElementById("ochopag");
+if(slot){slot.appendChild(end.firstChild);slot.className="mx-end";slot.style.margin="10px auto 30px"}
+else{const ft=document.querySelector("body > footer, main > footer");ft&&ft.parentNode===document.body?document.body.insertBefore(end,ft):document.body.appendChild(end)}
+})();
 </script>
 </body>
 </html>
