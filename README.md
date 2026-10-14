@@ -38,8 +38,8 @@ Cada página sirve para la sala de espera, la casa o para compartir por WhatsApp
 | | Página | Para qué sirve |
 |:-:|---|---|
 | 🏠 | [**Portada**](https://manecist.github.io/Matrona/) | Entrada al portafolio, con filtros por tema |
-| 🤰 | [**Cápsula Chile Crece Contigo**](https://manecist.github.io/Matrona/capsula.html) | Embarazo, parto, recién nacido, lactancia y posparto en 7 etapas |
-| 🎬 | [**8 cápsulas en video**](https://manecist.github.io/Matrona/capsula.html#misvideos) | Leche materna, Shantala, chanchitos, sueño seguro, PAP y más |
+| 🤰 | [**Cápsula Chile Crece Contigo**](https://manecist.github.io/Matrona/capsula.html) | Cápsula original de 2020, ampliada: embarazo, parto, recién nacido, lactancia y posparto en 7 etapas |
+| 🎬 | [**8 cápsulas nuevas en video (2026)**](https://manecist.github.io/Matrona/capsula.html#misvideos) | Con información actualizada: leche materna, Shantala, chanchitos, sueño seguro, maternidad, PAP, píldora del día después y mitos de la lactancia |
 | 💊 | [**Anticonceptivos al toque**](https://manecist.github.io/Matrona/guia-anticonceptivos.html) | Busca tu marca y compara métodos |
 | 📋 | [**Torpedo profesional**](https://manecist.github.io/Matrona/torpedo.html) | Ficha por marca, ¿puedo usarlo? (CDC/OMS), fecha probable de parto |
 | 🎗️ | [**Cáncer**](https://manecist.github.io/Matrona/historia-cancer.html) | Prevenir y detectar a tiempo |
@@ -62,7 +62,7 @@ Cada página sirve para la sala de espera, la casa o para compartir por WhatsApp
 </p>
 
 <p align="center">
-<b>🎬 Mis cápsulas en video</b><br>
+<b>🎬 Mis 8 cápsulas nuevas en video (2026)</b><br>
 <img src="assets/readme/videos.jpg" width="820" alt="Ocho cápsulas en video">
 </p>
 
