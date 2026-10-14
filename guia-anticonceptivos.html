@@ -210,6 +210,8 @@ h1,h2{color:#E9DEFF}
     <button class="chip" data-f="aps" aria-pressed="false">En la red pública</button>
   </div>
 
+  <div id="hit"></div>
+  <div class="grid" id="grid"></div>
   <section class="legal" id="legal">
     <h2>⚖ Importante para adolescentes</h2>
     <p><b>A cualquier edad</b> puedes pedir orientación y un método anticonceptivo en tu CESFAM, sola o acompañada, y la atención es <b>confidencial</b> (Ley 20.418 y Normas de Regulación de la Fertilidad). No te pueden exigir permiso de tus padres.</p>
@@ -244,8 +246,6 @@ h1,h2{color:#E9DEFF}
     <h2 style="font-family:var(--display);color:var(--violeta);margin:0;font-size:26px">Mitos y verdades: toca cada tarjeta</h2>
     <div class="flip" id="flip"></div>
   </section>
-  <div id="hit"></div>
-  <div class="grid" id="grid"></div>
 
   <section class="salud" id="dolor">
     <h2>¿Te duele la regla?</h2>
@@ -431,7 +431,7 @@ function render(){
   $("#grid").innerHTML=list.length?list.map(m=>`<button class="card" data-id="${m.id}" aria-label="Ver ${esc(m.nombre)}">
     <div class="art">${ART[m.id]}</div><h3>${esc(m.nombre)}</h3><div class="brands">${hl(m.resumen,q)}</div>
     <div class="meter"><div class="bar"><i style="width:${m.efn==null?100:Math.max(6,100-m.efn*6)}%;background:${efColor(m.efn)}"></i></div><span>${esc(m.efn==null?"Emergencia":m.ef+"/100")}</span></div>
-    <div class="tags">${m.tags.map(t=>`<span class="tag">${TAGN[t]}</span>`).join("")}</div></button>`).join(""):`<div class="empty">Esa marca no aparece entre los anticonceptivos. Revisa la tabla de abajo o prueba con el nombre de la hormona.</div>`;
+    <div class="tags">${m.tags.map(t=>`<span class="tag">${TAGN[t]}</span>`).join("")}</div></button>`).join(""):(filtro!=="all"&&DATA.metodos.some(m=>matches(m,q))?`<div class="empty">Con el filtro «${TAGN[filtro]}» no aparece. Toca «Todos» para verlo.</div>`:`<div class="empty">Esa marca no aparece entre los anticonceptivos. Prueba con el nombre de la hormona.</div>`);
   // marca exacta
   let hit="";
   if(q.length>=3){
