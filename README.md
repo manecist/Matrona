@@ -1,7 +1,7 @@
-<h1 align="center">🌙 María Cisterna · Matrona</h1>
+<h1 align="center">🌸 María Cisterna · Matrona</h1>
 
 <p align="center">
-  <img src="assets/logo_maria_cisterna_noche.png" width="420" alt="Logo María Cisterna Matrona">
+  <a href="https://manecist.github.io/Matrona/"><img src="assets/readme/banner_portafolio.jpg" width="100%" alt="María Cisterna · Matrona: 8 páginas interactivas y 8 cápsulas nuevas en video"></a>
 </p>
 
 <p align="center">
@@ -14,10 +14,11 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Matrona-Reg._SIS_561993-6B3FD4?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Fuentes-MINSAL_·_OMS_·_CDC-EE6FB0?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Páginas-8_interactivas-3A2E4A?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Cápsulas-8_videos-D4AF37?style=for-the-badge">
+  <img src="https://img.shields.io/badge/🩺_Matrona-Reg._SIS_561993-B79AF2?style=for-the-badge&labelColor=7A52D9">
+  <img src="https://img.shields.io/badge/📚_Fuentes-MINSAL_·_OMS_·_CDC-F49ACB?style=for-the-badge&labelColor=D9579B">
+  <img src="https://img.shields.io/badge/🗺️_Páginas-8_interactivas-9ED9C6?style=for-the-badge&labelColor=2F8C78">
+  <img src="https://img.shields.io/badge/🎬_Cápsulas_nuevas-8_videos_2026-F6D88A?style=for-the-badge&labelColor=C9952A">
+  <img src="https://img.shields.io/badge/🎁_Guía_de_regalo-PDF-FFD9C9?style=for-the-badge&labelColor=E07A5F">
 </p>
 
 > 📜 **Licencia:** © 2026 María Inés Cisterna Escobar, matrona. Todos los derechos reservados. Ver [LICENSE](LICENSE).
@@ -40,6 +41,7 @@ Cada página sirve para la sala de espera, la casa o para compartir por WhatsApp
 | 🏠 | [**Portada**](https://manecist.github.io/Matrona/) | Entrada al portafolio, con filtros por tema |
 | 🤰 | [**Cápsula Chile Crece Contigo**](https://manecist.github.io/Matrona/capsula.html) | Cápsula original de 2020, ampliada: embarazo, parto, recién nacido, lactancia y posparto en 7 etapas |
 | 🎬 | [**8 cápsulas nuevas en video (2026)**](https://manecist.github.io/Matrona/capsula.html#misvideos) | Con información actualizada: leche materna, Shantala, chanchitos, sueño seguro, maternidad, PAP, píldora del día después y mitos de la lactancia |
+| 📖 | [**Guías paso a paso + regalo**](https://manecist.github.io/Matrona/capsula.html#guias) | Shantala, guardar la leche, chanchitos, sueño seguro y cuidados del recién nacido, con imágenes; resumen y preguntas al final de cada cápsula; guía en PDF para descargar |
 | 💊 | [**Anticonceptivos al toque**](https://manecist.github.io/Matrona/guia-anticonceptivos.html) | Busca tu marca y compara métodos |
 | 📋 | [**Torpedo profesional**](https://manecist.github.io/Matrona/torpedo.html) | Ficha por marca, ¿puedo usarlo? (CDC/OMS), fecha probable de parto |
 | 🎗️ | [**Cáncer**](https://manecist.github.io/Matrona/historia-cancer.html) | Prevenir y detectar a tiempo |
