@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <title>Cápsula Crece Contigo</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700&display=swap">
-<style>/* Layout: historia vertical por capítulos; cada capítulo = texto corto + gráfico interactivo; guardianas de Luna Matrona guían con globos de diálogo */
+<style>/* Layout: historia vertical por capítulos; cada capítulo = texto corto + gráfico interactivo; las guardianas guían con globos de diálogo */
 :root{
   --bg:#FCF7FD; --bg2:#F3ECFF; --surface:#FFFFFF; --soft:#F6EEFD; --ink:#3A2E4A; --muted:#7D6C96; --line:#ECE0F8;
   --rosa:#EE6FB0; --rosa2:#FBC4E2; --violeta:#6B3FD4; --lila:#B79AF2; --celeste:#7FCCE8; --azul:#2F5BB5; --oro:#E9B949;
@@ -205,6 +205,8 @@ h1,h2{color:#E9DEFF}
 @media (max-width:620px){.ict{grid-template-columns:1fr}.ict svg{max-width:160px;margin:auto}}
 .ict svg{width:100%;display:block}
 .ict input{width:100%;accent-color:#E8A33D}
+.kbaby{position:relative;margin:0 auto;max-width:200px}.kbaby img{width:100%;height:auto;display:block}.kbaby .kl{position:absolute;left:4%;right:-34px;border-top:1px dashed var(--muted);font-size:10px;color:var(--muted);text-align:right;line-height:1;padding-top:2px;pointer-events:none}
+
 /* lactancia */
 .clock{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:22px;align-items:center}
 @media (max-width:620px){.clock{grid-template-columns:1fr}.clock svg{max-width:220px;margin:auto}}
@@ -612,39 +614,7 @@ h1,h2{color:#E9DEFF}
     <div class="num">Piel amarilla</div>
     <h2>¿Hasta dónde llega la <em>ictericia</em>?</h2>
     <div class="ict">
-      <svg viewBox="0 0 200 310" id="baby" role="img" aria-label="Recién nacido que se pone amarillo por zonas, de la cabeza a los pies">
-        <defs><style>#baby .sk{stroke:#B5838D;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}</style></defs>
-        <g id="z4">
-          <path class="sk" d="M64 112 C46 118 38 140 36 168 L49 171 C51 148 57 132 66 127 Z"/>
-          <path class="sk" d="M136 112 C154 118 162 140 164 168 L151 171 C149 148 143 132 134 127 Z"/>
-          <path class="sk" d="M64 232 Q78 236 92 232 L89 276 Q78 280 68 276 Z"/>
-          <path class="sk" d="M108 232 Q122 236 136 232 L132 276 Q122 280 111 276 Z"/>
-        </g>
-        <g id="z5">
-          <ellipse class="sk" cx="42" cy="177" rx="9" ry="10"/><ellipse class="sk" cx="158" cy="177" rx="9" ry="10"/>
-          <ellipse class="sk" cx="78" cy="286" rx="15" ry="8"/><ellipse class="sk" cx="122" cy="286" rx="15" ry="8"/>
-        </g>
-        <path id="z2" class="sk" d="M66 104 Q100 98 134 104 L140 158 L60 158 Z"/>
-        <g id="z3">
-          <path class="sk" d="M60 158 L140 158 L138 190 L62 190 Z"/>
-          <path class="sk" d="M62 188 L98 188 L94 234 Q78 238 64 233 Z"/>
-          <path class="sk" d="M102 188 L138 188 L136 233 Q122 238 106 234 Z"/>
-        </g>
-        <path d="M64 176 Q100 168 136 176 L134 200 Q118 214 100 214 Q82 214 66 200 Z" fill="#FFFFFF" stroke="#C9B6D9" stroke-width="1.6"/>
-        <circle cx="100" cy="150" r="2" fill="#B5838D"/>
-        <g id="z1">
-          <rect class="sk" x="88" y="94" width="24" height="14" rx="6"/>
-          <circle class="sk" cx="100" cy="58" r="42"/>
-        </g>
-        <path d="M86 20 Q100 6 112 18 Q104 14 98 22" fill="none" stroke="#8E6E4F" stroke-width="2.4" stroke-linecap="round"/>
-        <ellipse id="scl1" cx="84" cy="60" rx="10" ry="7" stroke="#8E6E4F" stroke-width="1.2"/><ellipse id="scl2" cx="116" cy="60" rx="10" ry="7" stroke="#8E6E4F" stroke-width="1.2"/>
-        <circle cx="84" cy="60" r="3.6" fill="#4A3426"/><circle cx="116" cy="60" r="3.6" fill="#4A3426"/>
-        <circle cx="85.4" cy="58.6" r="1.2" fill="#fff"/><circle cx="117.4" cy="58.6" r="1.2" fill="#fff"/>
-        <ellipse cx="74" cy="76" rx="7" ry="4" fill="#F4A6B8" opacity=".6"/><ellipse cx="126" cy="76" rx="7" ry="4" fill="#F4A6B8" opacity=".6"/>
-        <path d="M93 80 Q100 86 107 80" fill="none" stroke="#B5838D" stroke-width="2" stroke-linecap="round"/>
-        <line x1="54" y1="234" x2="146" y2="234" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="150" y="238" font-size="10" fill="var(--muted)">rodillas</text>
-        <line x1="54" y1="158" x2="146" y2="158" stroke="var(--muted)" stroke-dasharray="3 3" opacity=".7"/><text x="150" y="162" font-size="10" fill="var(--muted)">ombligo</text>
-      </svg>
+      <figure id="baby" class="kbaby" role="img" aria-label="Recién nacido que se pone amarillo por zonas, de la cabeza a los pies"><img id="kimg" src="assets/historias/kramer/kramer_0.webp" alt="" width="512" height="768"><span class="kl" style="top:49.2%">ombligo</span><span class="kl" style="top:72.3%">rodillas</span></figure>
       <div>
         <p style="margin:0 0 8px">El amarillo <b>parte en los ojos (las escleras) y la cara</b>, baja hacia los pies (avance céfalo-caudal) y <b>se va al revés</b>, de los pies hacia la cabeza. Mientras más abajo llega, más alta está la bilirrubina.</p>
         <label class="cap" for="ir">Mueve hasta donde ves amarillo</label>
@@ -1057,10 +1027,9 @@ const IZ=[["l-v","Sin amarillo","Revisa con luz de día: aprieta suave la piel d
 ["l-r","Bajo las rodillas y brazos (zona 4)","Cerca de 15 mg/dl. Urgencia hoy: la norma MINSAL indica derivar para medir la bilirrubina y evaluar fototerapia."],
 ["l-r","Palmas y plantas (zona 5)","Más de 15 mg/dl. Urgencia ahora."]];
 function ict(){const k=+$("#ir").value,Y=["","#FFF0A8","#FBE27A","#F6D35A","#EFC23C","#E8B02A"],SK="#FBE3D6";
- ["z1","z2","z3","z4","z5"].forEach((z,i)=>{const zi=i+1;$$("#"+z+", #"+z+" .sk").forEach(e=>e.setAttribute("fill",k>=zi?Y[Math.min(5,k-zi+2)]:SK))});
- ["scl1","scl2"].forEach(id=>$("#"+id).setAttribute("fill",k>=1?Y[Math.min(5,k+1)]:"#FFFFFF"));
+ $("#kimg").src="assets/historias/kramer/kramer_"+k+".webp";
  const s=IZ[k];$("#il").innerHTML=`<div class="dot ${s[0]}"></div><div><h3 class="${s[0]}">${s[1]}</h3><p>${s[2]}</p><p class="cap" style="margin-top:4px">Siempre urgencia si aparece el primer día, si está decaído, no quiere mamar o sus cacas son blancas.</p></div>`}
-$("#ir").addEventListener("input",ict);ict();
+$("#ir").addEventListener("input",ict);ict();[1,2,3,4,5].forEach(n=>{const i=new Image();i.src="assets/historias/kramer/kramer_"+n+".webp"});
 
 /* problemas de lactancia */
 const PB=[["Grietas","si",["Revisa el <b>acople</b>: boca bien abierta, labios hacia afuera, toma la areola y no solo el pezón.","Después de mamar, deja unas <b>gotas de tu leche</b> y que se seque al aire.","Usa <b>lanolina purificada</b> o crema reparadora para pezón (por ejemplo dexpantenol), en capa fina.","Si duele mucho, usa por un tiempo una <b>pezonera de silicona</b> que te enseñe tu matrona.","Comienza por el pecho que menos duele."],"Consulta si la grieta sangra, no mejora en unos días o ves pus."],
