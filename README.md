@@ -30,7 +30,7 @@
 Llevo a una página lo que explico en la consulta: **simple, paso a paso y con fuentes chilenas**.
 Cada página sirve para la sala de espera, la casa o para compartir por WhatsApp.
 
-🩺 Contenido clínico revisado por mí · 📊 Cifras de fuentes públicas · 🎨 Ilustraciones y personajes propios
+🩺 Contenido clínico revisado por mí · 📊 Cifras de fuentes públicas · 🎨 Ilustraciones pensadas para cada tema
 
 ---
 
