@@ -1,65 +1,136 @@
-# María Cisterna · Matrona ✦
+<h1 align="center">🌙 María Cisterna · Matrona</h1>
 
-![María Cisterna · Matrona](assets/logo_maria_cisterna_noche.png)
+<p align="center">
+  <img src="assets/logo_maria_cisterna_noche.png" width="420" alt="Logo María Cisterna Matrona">
+</p>
 
-**María Cisterna Escobar · Matrona** — Salud sexual y reproductiva · Registro Superintendencia de Salud N° 561993
+<p align="center">
+💜 Educar • Cuidar • Acompañar • Mostrarlo con datos 💜
+</p>
 
-Portafolio de salud sexual y reproductiva y **análisis de datos**: páginas educativas interactivas, una cápsula Chile Crece Contigo con videos animados, un torpedo profesional de hormonas y métodos, tableros en Power BI y Tableau (en repositorios aparte), y una planilla de registro PAP con datos ficticios.
+<p align="center">
+✨ <a href="https://manecist.github.io/Matrona/"><strong>Ver el portafolio en línea</strong></a> ✨<br>
+<sub>Páginas educativas interactivas de salud sexual y reproductiva, hechas para Chile.</sub>
+</p>
 
-> **Portafolio en línea:** `https://manecist.github.io/Matrona/` (GitHub Pages)
+<p align="center">
+  <img src="https://img.shields.io/badge/Matrona-Reg._SIS_561993-6B3FD4?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Fuentes-MINSAL_·_OMS_·_CDC-EE6FB0?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Páginas-8_interactivas-3A2E4A?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Cápsulas-8_videos-D4AF37?style=for-the-badge">
+</p>
 
+> 📜 **Licencia:** © 2026 María Inés Cisterna Escobar, matrona. Todos los derechos reservados. Ver [LICENSE](LICENSE).
 
-## 📂 Qué contiene
+---
 
-| Carpeta | Contenido |
-|---|---|
-| `index.html` | **Portada del portafolio**: cielo nocturno con las cuatro guardianas, filtros por tema y acceso a todo lo demás. |
-| `tesis.html` | **Mi tesis visual**: «La sexualidad no se jubila» (USS Concepción, 2017), respuestas por persona, citas, nube de palabras y quiz. |
-| `capsula.html` + `capsula/` | **Cápsula Chile Crece Contigo** que creé como matrona, con todo el camino en 7 etapas: **embarazo** (controles, ecografías y exámenes por trimestre con su porqué, 23 patologías con riesgos para la mamá y la guagua, gemelares, alto riesgo obstétrico, GES, cuidados, derechos laborales y leyes: IVE, Dominga, Mila, lactancia), **parto** (bolso, bono PAD, contador y simulador de contracciones con curva), **recién nacido** (vacunas y tamizajes, ajuar, control díada de la cabeza a los pies, 17 reflejos, ictericia por zonas de Kramer, cuidados y alarmas), **tu recuperación** (puntos, cesárea, pezones, cuarentena, alarmas), **lactancia** (registro de mamadas, conservación de la leche, qué la aumenta, cuándo no dar pecho), **posparto** (todos los métodos de Chile según semanas y lactancia, aviso legal para adolescentes) y **controles y vacunas**. Valores normales interactivos y fuentes MINSAL, Manual UC 2025 y OMS. |
-| `historia-cancer.html` | **Cáncer en Chile y el mundo**: mama, cuello uterino, endometrio, ovario, testículo y próstata (GLOBOCAN 2024), Chile frente al mundo, sobrevida por etapa, simulador de pesquisa, relación con VPH e ITS y calendario de controles. |
-| `historia-its.html` · `historia-matronas.html` | **Historias de datos** interactivas sobre ITS en Chile y sobre embarazo no planificado y matronería. |
-| `torpedo.html` | **Torpedo profesional**: ficha por marca comercial, hormonas, ventana fértil, edad gestacional y fecha probable de parto, «¿Puedo usarlo?» (CDC 2024/OMS), cáncer y seguridad, mitos vs. evidencia. |
-| `guia-anticonceptivos.html` | **Guía interactiva de anticonceptivos**: buscador por marca u hormona, filtros (sin estrógeno, larga duración, sin hormonas, red pública) y ficha de cada método con eficacia, ventajas, desventajas, riesgos, cuándo conviene, cuándo no usar y marcas equivalentes. |
-| `guia-anticonceptivos/` | Infografía de equivalencias de anticonceptivos en una hoja y guía de 29 láminas (PDF): ficha ilustrada de los 20 métodos (incluye implante de 3 y 5 años, condón femenino, diafragma, espermicidas, MELA, calendario, coito interrumpido, esterilización femenina y vasectomía) y todas las marcas que se venden en Chile, alerta de riesgo en los que tienen estrógeno y terapia hormonal de la menopausia. |
-| `capsula/videos/` | **Ocho cápsulas animadas en video** (versión cinemática, con su portada en `capsula/videos/portadas/`), narradas por mí y visibles en la sección «Mis cápsulas en video» de `capsula.html`: cómo guardar la leche materna, masaje Shantala, sacar chanchitos, sueño seguro, cuándo ir a la maternidad, qué es el PAP, píldora del día después y mitos de la lactancia. |
-| `planilla-pap/` | Planilla Excel con macros para registro y seguimiento de PAP, **con datos 100 % ficticios** (nombres, fechas, resultados, centros y profesionales). |
-| `datos/` | Script en Python que genera las fichas por marca (la base de datos está en el repositorio `dashboard-anticonceptivos-chile`). |
+## 🧠 De qué se trata
 
-Las imágenes de las páginas están en `assets/`.
+Llevo a una página lo que explico en la consulta: **simple, paso a paso y con fuentes chilenas**.
+Cada página sirve para la sala de espera, la casa o para compartir por WhatsApp.
 
-## 📊 Tableros (cada uno en su propio repositorio)
+🩺 Contenido clínico revisado por mí · 📊 Cifras de fuentes públicas · 🎨 Ilustraciones y personajes propios
 
-| Repositorio | Contenido |
-|---|---|
-| `dashboard-anticonceptivos-chile` | Power BI y Tableau: eficacia, seguridad, «Mi pastilla» con más de 140 marcas, ¿puedo usarlo?, interacciones. |
-| `dashboard-its-chile` | Power BI y Tableau: sífilis, gonorrea y VIH en Chile y el mundo, guía de cada ITS. |
-| `dashboard-embarazo-matronas-chile` | Power BI y Tableau: embarazo adolescente, matronería, mortalidad materna y neonatal, propuestas. |
-| `dashboard-ajuar-chile-crece-contigo` | Power BI y Tableau: entregas, cobertura, presupuesto y cadena logística del ajuar (PARN). |
-| `dashboard-cancer-chile` | Power BI: cuánto aumenta el cáncer en Chile, cuál predomina, cómo prevenirlo y detectarlo a tiempo. |
+---
 
-Cada repositorio trae el `.pbix`, el proyecto editable de Power BI, el `.twbx` de Tableau, la base de datos `.xlsx` y la lista de fuentes.
+## 🗺️ Las páginas
 
-## ✍️ Autoría
+| | Página | Para qué sirve |
+|:-:|---|---|
+| 🏠 | [**Portada**](https://manecist.github.io/Matrona/) | Entrada al portafolio, con filtros por tema |
+| 🤰 | [**Cápsula Chile Crece Contigo**](https://manecist.github.io/Matrona/capsula.html) | Embarazo, parto, recién nacido, lactancia y posparto en 7 etapas |
+| 🎬 | [**8 cápsulas en video**](https://manecist.github.io/Matrona/capsula.html#misvideos) | Leche materna, Shantala, chanchitos, sueño seguro, PAP y más |
+| 💊 | [**Anticonceptivos al toque**](https://manecist.github.io/Matrona/guia-anticonceptivos.html) | Busca tu marca y compara métodos |
+| 📋 | [**Torpedo profesional**](https://manecist.github.io/Matrona/torpedo.html) | Ficha por marca, ¿puedo usarlo? (CDC/OMS), fecha probable de parto |
+| 🎗️ | [**Cáncer**](https://manecist.github.io/Matrona/historia-cancer.html) | Prevenir y detectar a tiempo |
+| 🔴 | [**ITS**](https://manecist.github.io/Matrona/historia-its.html) | Lo que no se ve: sífilis, VIH, VPH |
+| 👩‍⚕️ | [**Matronas**](https://manecist.github.io/Matrona/historia-matronas.html) | Hay matronas de sobra, ¿por qué no las contratan? |
+| 🎓 | [**Mi tesis**](https://manecist.github.io/Matrona/tesis.html) | «La sexualidad no se jubila» (USS, 2017) |
 
-- **Contenido clínico, análisis, revisión y diseño de la planilla PAP:** María Cisterna Escobar, matrona (Universidad San Sebastián, 2018).
-- **Tableros, bases de datos, diseño y programación:** María Cisterna Escobar.
-- **Personajes, ilustraciones y logo:** María Cisterna Escobar (Luna Matrona: Marea, Brote, Lumen y Nido).
+---
 
-## 🔒 Privacidad
+## 📷 Vista del proyecto
 
-La planilla PAP es una copia demostrativa: nombres, identificadores, fechas de nacimiento, fechas de examen, resultados, centros de salud y profesionales son ficticios y solo muestran cómo funciona la planilla. No contiene datos de pacientes reales ni de instituciones.
+<p align="center">
+<b>🏠 Portada</b><br>
+<img src="assets/readme/index.jpg" width="820" alt="Portada del portafolio">
+</p>
 
-## 🔎 Sobre los datos
+<p align="center">
+<b>🤰 Cápsula Chile Crece Contigo</b><br>
+<img src="assets/readme/capsula.jpg" width="820" alt="Cápsula Chile Crece Contigo">
+</p>
 
-- Todas las cifras de los tableros vienen de fuentes públicas citadas en cada uno (MINSAL, ISP, INE, DIPRES, Cenabast, OPS/OMS, ONUSIDA, ECDC, UNFPA, CDC y estudios científicos).
-- Las cifras 2025 de ITS se tomaron de reportes de prensa que citan los informes MINSAL e ISP 2025; se recomienda contrastarlas con los documentos oficiales.
-- Hay años sin dato público: no se inventaron cifras.
-- Las proyecciones internacionales (Lancet, UNFPA) son modelos, no mediciones en Chile.
+<p align="center">
+<b>🎬 Mis cápsulas en video</b><br>
+<img src="assets/readme/videos.jpg" width="820" alt="Ocho cápsulas en video">
+</p>
 
-## ⚠️ Aviso
+<table align="center">
+<tr>
+<td align="center"><b>💊 Anticonceptivos al toque</b><br><img src="assets/readme/guia-anticonceptivos.jpg" width="400" alt="Guía de anticonceptivos"></td>
+<td align="center"><b>📋 Torpedo profesional</b><br><img src="assets/readme/torpedo.jpg" width="400" alt="Torpedo profesional"></td>
+</tr>
+<tr>
+<td align="center"><b>🎗️ Cáncer</b><br><img src="assets/readme/historia-cancer.jpg" width="400" alt="Historia de cáncer"></td>
+<td align="center"><b>🔴 ITS</b><br><img src="assets/readme/historia-its.jpg" width="400" alt="Historia de ITS"></td>
+</tr>
+<tr>
+<td align="center"><b>👩‍⚕️ Matronas</b><br><img src="assets/readme/historia-matronas.jpg" width="400" alt="Historia de matronas"></td>
+<td align="center"><b>🎓 Mi tesis</b><br><img src="assets/readme/tesis.jpg" width="400" alt="Tesis visual"></td>
+</tr>
+</table>
 
-Material educativo. No reemplaza la consejería ni el control con un profesional de salud.
+---
 
-## ©️ Derechos
+## ✨ Qué se puede hacer
 
-© 2026 María Cisterna Escobar, matrona · Registro Superintendencia de Salud N° 561993. **Todos los derechos reservados.** Puedes ver y compartir el enlace; no está permitido copiar, reproducir ni reutilizar el código, las ilustraciones, los personajes ni los textos sin autorización escrita. Ver [LICENSE](LICENSE).
+🔎 Buscar un anticonceptivo por marca u hormona<br>
+✅ Saber si puedo usar un método según mi salud (CDC 2024 / OMS)<br>
+⏱️ Medir contracciones y ver la curva<br>
+👶 Revisar los 17 reflejos del recién nacido, cada uno con su ilustración<br>
+🟡 Ver la ictericia por zonas de Kramer<br>
+🍼 Anotar mamadas y saber cuánto dura la leche guardada<br>
+📅 Calcular edad gestacional y fecha probable de parto<br>
+🧩 Responder quiz y mover los gráficos
+
+---
+
+## 📊 Tableros
+
+Los tableros de **Power BI y Tableau** están en su propio repositorio:
+👉 [**Analisis-de-datos-dashboards**](https://github.com/manecist/Analisis-de-datos-dashboards)
+
+---
+
+## 📁 Organización
+
+```text
+Matrona/
+├── index.html                 🏠 portada
+├── capsula.html               🤰 cápsula Chile Crece Contigo
+├── capsula/videos/            🎬 8 cápsulas + portadas
+├── guia-anticonceptivos.html  💊 guía interactiva
+├── guia-anticonceptivos/      🗂️ infografía y guía de 29 láminas
+├── torpedo.html               📋 torpedo profesional
+├── historia-*.html            📈 historias de datos (cáncer, ITS, matronas)
+├── tesis.html                 🎓 mi tesis visual
+├── planilla-pap/              🧾 planilla PAP con datos ficticios
+├── datos/                     🐍 script de fichas por marca
+└── assets/                    🎨 ilustraciones, logos y capturas
+```
+
+---
+
+## 🔒 Privacidad · 🔎 Datos · ⚠️ Aviso
+
+- 🔒 La **planilla PAP** usa datos **100 % ficticios**: no hay pacientes reales.
+- 🔎 Las cifras vienen de **MINSAL, ISP, INE, OPS/OMS, GLOBOCAN y CDC**. Si un año no tiene dato público, no se inventó.
+- ⚠️ Es **material educativo**: no reemplaza el control con tu matrona o médico.
+
+---
+
+<p align="center">
+👩‍⚕️ <b>María Inés Cisterna Escobar</b> · Matrona · Universidad San Sebastián<br>
+<sub>Registro Superintendencia de Salud N° 561993</sub>
+</p>
