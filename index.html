@@ -82,6 +82,13 @@ section{margin-top:80px;scroll-margin-top:70px}
 .feat .media img{width:100%;display:block}
 .btn{display:inline-block;margin-top:14px;font-weight:700;font-size:15px;padding:11px 22px;border-radius:999px;background:var(--violeta);color:#fff;text-decoration:none}
 .btn.alt{background:var(--soft);color:var(--violeta);margin-left:6px}
+.pap .pap-shots{display:grid;gap:12px;overflow:visible}
+.pap figure{margin:0;border-radius:16px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.pap figure img{width:100%;display:block}
+.pap figcaption{font-size:12.5px;color:#5B4A80;padding:7px 12px;font-weight:600}
+.pap .pap-t{margin:0 0 6px;font-family:var(--display);font-size:26px;color:var(--violeta)}
+.pap .pap-l{margin:10px 0;padding-left:0;list-style:none;display:grid;gap:7px;font-size:15px}
+.pap .pap-n{font-size:13.5px;color:var(--muted)}
 .wm{position:relative}
 .wm::after{content:"© María Cisterna · Matrona";position:absolute;right:10px;bottom:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,.9);text-shadow:0 1px 4px rgba(0,0,0,.35);pointer-events:none}
 img{-webkit-user-drag:none;user-select:none}
@@ -212,8 +219,21 @@ h1,h2{color:#E9DEFF}
 
   <section id="herr">
     <div class="sh"><div><p class="kick">06 · Herramientas</p><h2>Para el <em>día a día</em> clínico</h2></div></div>
-    <div class="grid">
-      <a class="card" href="planilla-pap/PAP_portafolio_MariaCisterna.xlsm" style="--a:#CDEFE3"><div class="art"><span class="em">PAP</span></div><div class="bd"><h3>Planilla de registro PAP</h3><p>Excel con formulario y macros para registrar y seguir PAP por año, con resumen anual. Datos 100% ficticios.</p><div class="tags"><span class="tag">Excel</span><span class="tag">VBA</span></div></div></a>
+    <div class="feat pap">
+      <div class="media pap-shots">
+        <figure><a href="assets/pap/pap_registro.webp" target="_blank" rel="noopener"><img src="assets/pap/pap_registro.webp" alt="Hoja de registro PAP 2023 con vigencia y estado calculados" loading="lazy"></a><figcaption>Registro por año: vigencia y estado se calculan solos</figcaption></figure>
+        <figure><a href="assets/pap/pap_resumen.webp" target="_blank" rel="noopener"><img src="assets/pap/pap_resumen.webp" alt="Resumen anual de PAP con tablas y gráficos por mes y año" loading="lazy"></a><figcaption>Resumen: PAP por mes y año, derivaciones a UPC y VPH +</figcaption></figure>
+      </div>
+      <div><h3 class="pap-t">Planilla de registro PAP</h3><p>La planilla que armé en Excel para llevar el registro de PAP del CESFAM, sin perder a nadie de vista.</p>
+        <ul class="pap-l">
+          <li>📝 <b>Formulario para ingresar</b> a cada usuaria (botón INGRESAR, con macros): CESFAM, fecha de nacimiento, PAP anterior y actual, matrona responsable.</li>
+          <li>🧮 <b>Calcula sola</b> la edad, separa el resultado según la nomenclatura del informe y pone la fecha de <b>vigencia</b> del próximo PAP.</li>
+          <li>🚦 Marca el <b>estado</b> (al día o atrasado) y destaca en color los resultados para revisar.</li>
+          <li>📊 <b>Resumen anual</b>: PAP tomados por mes y por año (2017 a 2023), derivaciones a UPC y VPH positivos, con gráficos.</li>
+        </ul>
+        <p class="pap-n">Todos los nombres y datos son <b>100% ficticios</b>. Al abrirla, Excel pide <i>habilitar contenido</i> para usar el formulario.</p>
+        <div class="tags"><span class="tag">Excel</span><span class="tag">VBA</span><span class="tag">Fórmulas</span><span class="tag">Gráficos</span></div>
+        <a class="btn" href="planilla-pap/PAP_portafolio_MariaCisterna.xlsm" download>⬇️ Descargar la planilla</a></div>
     </div>
   </section>
 

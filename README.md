@@ -98,6 +98,26 @@ Cada página sirve para la sala de espera, la casa o para compartir por WhatsApp
 
 ---
 
+## 🧾 Planilla de registro PAP
+
+Planilla en Excel que armé para llevar el registro de PAP del CESFAM, sin perder a nadie de vista. 👉 [**Descargar**](planilla-pap/PAP_portafolio_MariaCisterna.xlsm)
+
+📝 **Formulario para ingresar** a cada usuaria (botón INGRESAR, con macros)<br>
+🧮 **Calcula sola** la edad, separa el resultado según la nomenclatura del informe y pone la fecha de **vigencia** del próximo PAP<br>
+🚦 Marca el **estado** (al día o atrasado) y destaca en color los resultados para revisar<br>
+📊 **Resumen anual**: PAP por mes y por año (2017 a 2023), derivaciones a UPC y VPH positivos, con gráficos
+
+<table align="center">
+<tr>
+<td align="center"><b>Registro por año</b><br><img src="assets/pap/pap_registro.webp" width="400" alt="Hoja de registro PAP"></td>
+<td align="center"><b>Resumen anual</b><br><img src="assets/pap/pap_resumen.webp" width="400" alt="Resumen anual de PAP con gráficos"></td>
+</tr>
+</table>
+
+<sub>🔒 Todos los nombres y datos son 100 % ficticios. Al abrirla, Excel pide <i>habilitar contenido</i> para usar el formulario.</sub>
+
+---
+
 ## 📊 Tableros
 
 Los tableros de **Power BI y Tableau** están en su propio repositorio:
